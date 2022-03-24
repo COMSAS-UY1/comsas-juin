@@ -1,0 +1,166 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="{% static 'core/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'core/css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'core/css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'core/css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'core/css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'core/css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}"  type="text/css">
+	<link rel="stylesheet" type="text/css" href="{% static 'core/css/bootstrap.min.css' %}">
+
+	<!-- slide elements-->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="all">
+
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
+
+
+        <!-- Bootstrap bootstrap-touch-slider Slider Main Style Sheet -->
+        <link rel="stylesheet" href="{% static 'core/css/bootstrap-touch-slider.css' %}" rel="stylesheet" media="all">
+     <!-- end  slide elements-->
+	<title>comsas | JUIN 2022 {% block title %}  {% endblock %} </title>
+</head>
+<body>
+    <!-- Page Preloder 
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+    -->
+{% block nav %}
+
+    <header class="header-section">
+        <div class="container">
+            <div class="logo">
+                <a href="./index.html">
+                    <img src = "{% static 'core/img/logos/logo-black-trans.png' %}" alt="" width="85px" height="85px">
+                </a>
+            </div>
+            <div class="nav-menu">
+                <nav class="mainmenu mobile-menu">
+                    <ul>
+                        <li class="active"><a href="{% url 'core:home' %}">Acceuil</a></li>
+                        <li><a href="{% url 'core:about' %}">A propos</a></li>
+                        <li><a href="{% url 'core:speakers' %}">Intervenants</a>
+                            <ul class="dropdown">
+                                <li><a href="">Jayden</a></li>
+                                <li><a href="#">Sara</a></li>
+                                <li><a href="#">Emma</a></li>
+                                <li><a href="#">Harriet</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{% url 'core:schedule' %}">Programme</a></li>
+                        <li><a href="{% url 'core:contact' %}">Contacts</a></li>
+                    </ul>
+                </nav>
+                <a href="#" class="primary-btn top-btn"><i class="fa fa-ticket"></i> Soiré</a>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+
+{% endblock %}
+
+
+{% block body %}
+
+salut
+{% endblock %}
+
+
+
+{% block footer %}
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="partner-logo owl-carousel">
+                <a href="#" class="pl-table">
+                    <div class="pl-tablecell">
+                        <img src = "{% static 'core/img/partner-logo/logo-1.png' %}" alt="">
+                    </div>
+                </a>
+                <a href="#" class="pl-table">
+                    <div class="pl-tablecell">
+                        <img src = "{% static 'core/img/partner-logo/logo-2.png' %}" alt="">
+                    </div>
+                </a>
+                <a href="#" class="pl-table">
+                    <div class="pl-tablecell">
+                        <img src = "{% static 'core/img/partner-logo/logo-3.png' %}" alt="">
+                    </div>
+                </a>
+                <a href="#" class="pl-table">
+                    <div class="pl-tablecell">
+                        <img src = "{% static 'core/img/partner-logo/logo-4.png' %}" alt="">
+                    </div>
+                </a>
+                <a href="#" class="pl-table">
+                    <div class="pl-tablecell">
+                        <img src = "{% static 'core/img/partner-logo/logo-5.png' %}" alt="">
+                    </div>
+                </a>
+                <a href="#" class="pl-table">
+                    <div class="pl-tablecell">
+                        <img src = "{% static 'core/img/partner-logo/logo-6.png' %}" alt="">
+                    </div>
+                </a>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-text">
+                        <div class="ft-logo">
+                            <a href="#" class="footer-logo"><img src = "{% static 'core/img/logos/logo-white.png' %}" alt="" width="80px" height="85px"></a>
+                        </div>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Speakers</a></li>
+                            <li><a href="#">Schedule</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                        <div class="copyright-text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Built by <a href="#" target="_blank">COM.S.A.S</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
+                        <div class="ft-social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}
+
+
+    <!-- Js Plugins -->
+    <script src = "{% static 'core/js/jquery-3.3.1.min.js' %}"></script>
+    <script src = "{% static 'core/js/bootstrap.min.js' %}"></script>
+    <script src = "{% static 'core/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src = "{% static 'core/js/jquery.countdown.min.js' %}"></script>
+    <script src = "{% static 'core/js/jquery.slicknav.js' %}"></script>
+    <script src = "{% static 'core/js/owl.carousel.min.js' %}"></script>
+    <script src = "{% static 'core/js/main.js' %}"></script>
+
+
+<!--    <script src = {% static 'core/js/jquery-3.3.1.min.js"></script>
+    <script src = {% static 'core/js/bootstrap.min.js"></script>
+    <script src = {% static 'core/js/jquery.magnific-popup.min.js"></script>
+    <script src = {% static 'core/js/jquery.countdown.min.js"></script>
+    <script src = {% static 'core/js/jquery.slicknav.js"></script>
+    <script src = {% static 'core/js/owl.carousel.min.js"></script>
+    <script src = {% static 'core/js/main.js"></script>
+
+-->
+</body>
+</html>
