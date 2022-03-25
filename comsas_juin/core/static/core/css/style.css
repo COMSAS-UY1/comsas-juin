@@ -1235,8 +1235,9 @@ ol {
   Breadcrumb
 -----------------------*/
 
-.breadcrumb-section {
+.breadcrumb-section > div{
 	padding: 75px 0 75px;
+	background: linear-gradient(120deg, rgba(198, 85, 86, 0.2) 45%, rgba(71, 48, 55, 0.4));
 }
 
 .breadcrumb-text {
@@ -1245,7 +1246,7 @@ ol {
 
 .breadcrumb-text h2 {
 	font-size: 40px;
-	color: #171822;
+	color: #fff;
 	font-weight: 600;
 	margin-bottom: 14px;
 }
