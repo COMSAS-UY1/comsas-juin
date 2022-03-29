@@ -12,9 +12,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
 *{
-    font-family: 'Poppins';
+    font-family: 'Work Sans', sans-serif;
 }
 .container-fluid {
     overflow: hidden;
@@ -27,6 +27,9 @@
 }
 .slide-text{
     font-weight: 900;
+}
+h1{
+    color: red;
 }
 </style>
 </head>
@@ -41,9 +44,9 @@
                 <div class="carousel-inner"> 
                         
                     <!-- first slide -->
-                    <div class="carousel-item active"> <img src = "{% static 'core/img/hero.jpg' %}" alt="" />
+                    <div class="carousel-item active"> <img src = "{% static 'core/img/hero.jpg' %}" alt="" style="object-fit: contain;" />
                            <div class="slide-text slide_style_left">
-                                <h1 data-animation="animated zoomInRight" style="font-weight: bolder;">Découvrez le plus grand du Tech de l'UY1</h1>
+                                <h1 data-animation="animated zoomInRight">Découvrez le plus grand du Tech de l'UY1</h1>
                                 <p data-animation="animated fadeInLeft">De nombreux étudiants de la filière informatique vous reserve des surprises</p>
                                 <a href="#"class="btn btn-default" data-animation="animated fadeInLeft">Découvrir</a>
                                 <a href="#" class="btn btn-primary bg-danger" data-animation="animated fadeInRight">Au programme</a>
