@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="{% static 'core/css/magnific-popup.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'core/css/slicknav.min.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'core/css/style.css' %}"  type="text/css">
-	<link rel="stylesheet" type="text/css" href="{% static 'core/css/bootstrap.min.css' %}">
 
 	<!-- slide elements-->
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="all">
@@ -29,6 +28,12 @@
 	<title>comsas | JUIN 2022 {% block title %}  {% endblock %} </title>
 </head>
 <body>
+
+    <style type="text/css">
+        a{
+            text-decoration: none;
+        }
+    </style>
     <!-- Page Preloder 
     <div id="preloder">
         <div class="loader"></div>
@@ -40,7 +45,7 @@
         <div class="container">
             <div class="logo">
                 <a href="./index.html">
-                    <img src = "{% static 'core/img/logos/logo-black-trans.png' %}" alt="" width="85px" height="85px">
+                    <img src = "{% static 'core/img/logos/logo.png' %}" alt="" width="75px" height="75px">
                 </a>
             </div>
             <div class="nav-menu">
@@ -60,7 +65,7 @@
                         <li><a href="{% url 'core:contact' %}">Contacts</a></li>
                     </ul>
                 </nav>
-                <a href="#" class="primary-btn top-btn"><i class="fa fa-ticket"></i> Soiré</a>
+                <a href="#" class="primary-btn top-btn"><i class="fa fa-ticket"></i> Nous sponsoriser</a>
             </div>
             <div id="mobile-menu-wrap"></div>
         </div>

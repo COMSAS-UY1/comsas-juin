@@ -1,7 +1,7 @@
 {
-    "primary": #3A2C34,
+    "primary": #f9488b,
     "secondary": #82263D,
-    "third": #DD5C5C,
+    "third": #ee8425,
     "fourth": #9A7884,
     "contrast": #7FB689
 }
@@ -179,8 +179,8 @@ ol {
 .price-item .tr-tag,
 .schedule-tab .nav-tabs .nav-item .nav-link.active,
 .site-btn {
-	background-image: -o-linear-gradient(330deg, #DD5C5C 0%, #3A2C34 100%), -o-linear-gradient(330deg, #DD5C5C 0%, #3A2C34 100%);
-	background-image: linear-gradient(120deg, #DD5C5C 0%, #3A2C34 100%), linear-gradient(120deg, #DD5C5C 0%, #3A2C34 100%);
+	background-image: -o-linear-gradient(330deg, #ee8425 0%, #f9488b 100%), -o-linear-gradient(330deg, #ee8425 0%, #f9488b 100%);
+	background-image: linear-gradient(120deg, #ee8425 0%, #f9488b 100%), linear-gradient(120deg, #ee8425 0%, #f9488b 100%);
 }
 
 /* buttons */
@@ -193,9 +193,9 @@ ol {
 	color: #ffffff;
 	text-align: center;
 	border-radius: 50px;
-	background-image: -webkit-gradient(linear, left top, right top, from(#DD5C5C), to(#3A2C34)), -webkit-gradient(linear, left top, right top, from(#DD5C5C), to(#3A2C34));
-	background-image: -o-linear-gradient(left, #DD5C5C 0%, #3A2C34 100%), -o-linear-gradient(left, #DD5C5C 0%, #3A2C34 100%);
-	background-image: linear-gradient(to right, #DD5C5C 0%, #3A2C34 100%), linear-gradient(to right, #DD5C5C 0%, #3A2C34 100%);
+	background-image: -webkit-gradient(linear, left top, right top, from(#ee8425), to(#f9488b)), -webkit-gradient(linear, left top, right top, from(#ee8425), to(#f9488b));
+	background-image: -o-linear-gradient(left, #ee8425 0%, #f9488b 100%), -o-linear-gradient(left, #ee8425 0%, #f9488b 100%);
+	background-image: linear-gradient(to right, #ee8425 0%, #f9488b 100%), linear-gradient(to right, #ee8425 0%, #f9488b 100%);
 }
 
 .site-btn {
@@ -388,6 +388,7 @@ ol {
 
 .nav-menu .primary-btn.top-btn {
 	margin: 27px 0;
+	text-decoration: none;
 }
 
 .slicknav_menu {
@@ -1421,9 +1422,9 @@ ol {
 }
 
 .testimonial-slider.owl-carousel .owl-nav button:hover {
-	background: -webkit-gradient(linear, left top, right top, from(#DD5C5C), to(#3A2C34));
-	background: -o-linear-gradient(left, #DD5C5C, #3A2C34);
-	background: linear-gradient(to right, #DD5C5C, #3A2C34);
+	background: -webkit-gradient(linear, left top, right top, from(#ee8425), to(#f9488b));
+	background: -o-linear-gradient(left, #ee8425, #f9488b);
+	background: linear-gradient(to right, #ee8425, #f9488b);
 	color: #ffffff;
 }
 
@@ -1538,8 +1539,8 @@ ol {
 }
 
 .speaker-item .si-text .si-social a:hover {
-	background: -o-linear-gradient(330deg, #DD5C5C, #3A2C34);
-	background: linear-gradient(120deg, #DD5C5C, #3A2C34);
+	background: -o-linear-gradient(330deg, #ee8425, #f9488b);
+	background: linear-gradient(120deg, #ee8425, #f9488b);
 	color: #ffffff;
 }
 
@@ -1666,8 +1667,8 @@ ol {
 }
 
 .schedule-table-tab .schedule-table-content table tbody tr td.hover-bg:hover {
-	background: -o-linear-gradient(330deg, #DD5C5C, #3A2C34);
-	background: linear-gradient(120deg, #DD5C5C, #3A2C34);
+	background: -o-linear-gradient(330deg, #ee8425, #f9488b);
+	background: linear-gradient(120deg, #ee8425, #f9488b);
 }
 
 .schedule-table-tab .schedule-table-content table tbody tr td.hover-bg:hover h5 {
@@ -2508,15 +2509,15 @@ ol {
 }
 
 {
-    "primary": #3A2C34,
+    "primary": #f9488b,
     "secondary": #82263D,
-    "third": #DD5C5C,
+    "third": #ee8425,
     "fourth": #9A7884,
     "contrast": #7FB689
 }
 
 .initiales{
-	color:#3A2C34 ;
+	color:#f9488b ;
 	font-size: 25px;
 	font-weight: bolder;
 }
