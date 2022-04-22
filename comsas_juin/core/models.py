@@ -1,6 +1,4 @@
-from distutils.command.upload import upload
 from django.db import models
-from django.forms import ImageField
 
 
 class Edition(models.Model):
@@ -25,6 +23,9 @@ class Speaker(models.Model):
     about = models.TextField()
     edition = models.ForeignKey(Edition, models.CASCADE)
 
+    def __str__(self):
+        return self.full_name
+
 
 class Event(models.Model):
     flyers = models.ImageField(upload_to="events/")
@@ -36,6 +37,9 @@ class Event(models.Model):
     date = models.DateField()
     edition = models.ForeignKey(Edition, models.CASCADE)
 
+    def __str__(self):
+        return self.title
+
 
 class Partner(models.Model):
 
@@ -45,3 +49,6 @@ class Partner(models.Model):
     phone_number = models.CharField(max_length=15, null=True, blank=True)
     description = models.TextField()
     edition = models.ForeignKey(Edition, models.CASCADE)
+
+    def __str__(self):
+        return self.name
