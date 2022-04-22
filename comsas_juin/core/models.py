@@ -14,7 +14,7 @@ class Edition(models.Model):
 
 class Speaker(models.Model):
     full_name = models.CharField(max_length=50)
-    profile = models.ImageField(upload_to="speakers/")
+    profile = models.ImageField(upload_to="images/speakers/")
     facebook = models.URLField(null=True, blank=True)
     twitter = models.URLField(null=True, blank=True)
     linkdin = models.URLField(null=True, blank=True)
@@ -28,7 +28,7 @@ class Speaker(models.Model):
 
 
 class Event(models.Model):
-    flyers = models.ImageField(upload_to="events/")
+    flyers = models.ImageField(upload_to="images/events/")
     location = models.CharField(max_length=200)
     title = models.CharField(max_length=200)
     directed_by = models.ForeignKey(Speaker, models.CASCADE)
@@ -42,9 +42,8 @@ class Event(models.Model):
 
 
 class Partner(models.Model):
-
     name = models.CharField(max_length=200)
-    logo = models.ImageField(upload_to="Client", default="Client/no_picture.png")
+    logo = models.ImageField(upload_to="images/partners/")
     web_site = models.URLField(max_length=200, null=True, blank=True)
     phone_number = models.CharField(max_length=15, null=True, blank=True)
     description = models.TextField()
@@ -52,3 +51,12 @@ class Partner(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Slider(models.Model):
+    big_title = models.CharField(max_length=255, null=False)
+    small_title = models.CharField(max_length=255)
+    background = models.ImageField(upload_to="images/slides/")
+
+    def __str__(self):
+        return self.big_title
