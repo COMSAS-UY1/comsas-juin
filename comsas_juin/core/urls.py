@@ -1,4 +1,4 @@
-from django.urls import path, include
+from django.urls import path
 from core.views import IndexView, SpeakerView, ContactView, ScheduleView, AboutView
 app_name = 'core'
 
