@@ -15,6 +15,7 @@ class Edition(models.Model):
 class Speaker(models.Model):
     full_name = models.CharField(max_length=50)
     profile = models.ImageField(upload_to="images/speakers/")
+    email = models.EmailField(null=False, blank=True)
     facebook = models.URLField(null=True, blank=True)
     twitter = models.URLField(null=True, blank=True)
     linkdin = models.URLField(null=True, blank=True)
