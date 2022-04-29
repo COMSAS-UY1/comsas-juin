@@ -9,7 +9,7 @@ class ScheduleView(TemplateView):
 
 
 class IndexView(View):
-    template_name = 'core/index.htmŀ'
+    template_name = 'core/index.html'
 
     def get(self, request, *args, **kwargs):
         # Speakers context data
