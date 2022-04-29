@@ -40,7 +40,7 @@
             <div id="carouselExampleIndicators" class="carousel slide">
                 <div class="carousel-inner"> 
                                             <!-- third slide -->
-                    <div class="carousel-item active"> <img src = "{% static 'core/images/s3.jpg' %}" alt="" />
+                    <div class="carousel-item active"> <img src = "{% static 'core/images/s3.jpg' %}" alt="" style="height: 80vh; width: 100vw;"/>
                         <div class="slide-text slide_style_right">
                         <h1 data-animation="animated zoomInLeft">Découvrez le plus grand du Tech de l'UY1</h1>
                         <p data-animation="animated fadeInRight">filière informatique vous reserve des surprises.</p>
@@ -51,7 +51,7 @@
 
                     <!-- first slide -->
                     {% for slide in sliders %}
-                    <div class="carousel-item"> <img src = "{{slide.background}}" alt="" />
+                    <div class="carousel-item"> <img src = "{{slide.background}}" style="height: 100vh; width: 100vw; background-size: cover;"  alt="" />
                            <div class="slide-text slide_style_left">
                                 <h1 data-animation="animated zoomInRight" style="font-weight: bolder;">{{slide.big_title}}</h1>
                                 <p data-animation="animated fadeInLeft">{{slide.small_title}}</p>
