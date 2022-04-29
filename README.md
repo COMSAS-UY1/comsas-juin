@@ -2,7 +2,7 @@
 ## <b>Overview</b>
 This repository aims at building a website for the University Days of Computer Science. This is for a proper management (like information backup) for the current and future editions of the Computer Science Association (COM.S.AS) and an online presence to enable real-time statiscs and communication of the different events that will be done to students.
 <br>
-![Website overview](./core/static/images/overview.png)
+![Website overview](./comsas_juin/core/static/core/images/overview.png)
 
 ## <b>Project setup</b>
 1. Clone the repositiory into your workstation (device/machine) by running the command: <br>
