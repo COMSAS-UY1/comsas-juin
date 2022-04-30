@@ -42,29 +42,8 @@ h1{
                     <!-- carousel code -->
             <div id="carouselExampleIndicators" class="carousel slide">
                 <div class="carousel-inner"> 
-                        
-                    <!-- first slide -->
-                    <div class="carousel-item active"> <img src = "{% static 'core/img/hero.jpg' %}" alt="" style="object-fit: contain;" />
-                           <div class="slide-text slide_style_left">
-                                <h1 data-animation="animated zoomInRight">Découvrez le plus grand du Tech de l'UY1</h1>
-                                <p data-animation="animated fadeInLeft">De nombreux étudiants de la filière informatique vous reserve des surprises</p>
-                                <a href="#"class="btn btn-default" data-animation="animated fadeInLeft">Découvrir</a>
-                                <a href="#" class="btn btn-primary bg-danger" data-animation="animated fadeInRight">Au programme</a>
-                            </div>
-                    </div>
-                    
-                    <!-- second slide -->
-                    <div class="carousel-item"> <img src = "{% static 'core/images/s4.jpg' %}" alt="" />
-                    <div class="slide-text slide_style_center">
-                        <h1 data-animation="animated flipInX">Découvrez le plus grand du Tech de l'UY1</h1>
-                        <p data-animation="animated lightSpeedIn">filière informatique vous reserve des surprises.</p>
-                        <a href="#"class="btn btn-default" data-animation="animated fadeInUp">DÉCOUVRIR</a>
-                        <a href="#" class="btn btn-primary bg-danger" data-animation="animated fadeInDown">AU PROGRAMME</a>
-                    </div>
-                    </div>
-                    
-                    <!-- third slide -->
-                    <div class="carousel-item"> <img src = "{% static 'core/images/s3.jpg' %}" alt="" />
+                                            <!-- third slide -->
+                    <div class="carousel-item active"> <img src = "{% static 'core/images/s3.jpg' %}" alt="" style="height: 80vh; width: 100vw;"/>
                         <div class="slide-text slide_style_right">
                         <h1 data-animation="animated zoomInLeft">Découvrez le plus grand du Tech de l'UY1</h1>
                         <p data-animation="animated fadeInRight">filière informatique vous reserve des surprises.</p>
@@ -72,6 +51,23 @@ h1{
                         <a href="#"class="btn btn-primary bg-danger" data-animation="animated fadeInRight">AU PROGRAMME</a>
                     </div>
                     </div>
+
+                    <!-- first slide -->
+                    {% for slide in sliders %}
+                    <div class="carousel-item"> <img src = "{{slide.background}}" style="height: 100vh; width: 100vw; background-size: cover;"  alt="" />
+                           <div class="slide-text slide_style_left">
+                                <h1 data-animation="animated zoomInRight" style="font-weight: bolder;">{{slide.big_title}}</h1>
+                                <p data-animation="animated fadeInLeft">{{slide.small_title}}</p>
+                                <a href="#"class="btn btn-default" data-animation="animated fadeInLeft">Découvrir</a>
+                                <a href="#" class="btn btn-primary bg-danger" data-animation="animated fadeInRight">Au programme</a>
+                            </div>
+                    </div>
+
+                    {% endfor %}
+                    
+
+                    
+
             </div>
                     
                     <!-- controls --> 

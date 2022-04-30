@@ -1,44 +1,3 @@
-{
-    "primary": #f9488b,
-    "secondary": #82263D,
-    "third": #ee8425,
-    "fourth": #9A7884,
-    "contrast": #7FB689
-}
-
-/******************************************************************
-  Template Name: Manup
-  Description: Manup Event HTML Template
-  Author: Colorlib
-  Author URI: http://colorlib.com
-  Version: 1.0
-  Created: Colorlib
-******************************************************************/
-
-/*------------------------------------------------------------------
-[Table of contents]
-
-1.  Template default CSS
-	1.1	Variables
-	1.2	Mixins
-	1.3	Flexbox
-	1.4	Reset
-2.  Helper Css
-3.  Header Section
-4.  Hero Section
-5.  Home About Section
-6.  Team Member Section
-7.  Pricing Section
-8.  Latest Blog Section
-9.  Contact
-10.  Footer Style
-
--------------------------------------------------------------------*/
-
-/*----------------------------------------*/
-
-/* Template default CSS
-/*----------------------------------------*/
 
 html,
 body {
@@ -179,8 +138,13 @@ ol {
 .price-item .tr-tag,
 .schedule-tab .nav-tabs .nav-item .nav-link.active,
 .site-btn {
+<<<<<<< HEAD
 	background-image: -o-linear-gradient(330deg, #ee8425 0%, #f9488b 100%), -o-linear-gradient(330deg, #ee8425 0%, #f9488b 100%);
 	background-image: linear-gradient(120deg, #ee8425 0%, #f9488b 100%), linear-gradient(120deg, #ee8425 0%, #f9488b 100%);
+=======
+	background-image: -o-linear-gradient(330deg, #f9488b 0%, #ee8425 100%), -o-linear-gradient(330deg, #f9488b 0%, #ee8425 100%);
+	background-image: linear-gradient(120deg, #f9488b 0%, #ee8425 100%), linear-gradient(120deg, #f9488b 0%, #ee8425 100%);
+>>>>>>> a2f85521e6f06a9661adafc47a833366481dc77f
 }
 
 /* buttons */
@@ -193,9 +157,15 @@ ol {
 	color: #ffffff;
 	text-align: center;
 	border-radius: 50px;
+<<<<<<< HEAD
 	background-image: -webkit-gradient(linear, left top, right top, from(#ee8425), to(#f9488b)), -webkit-gradient(linear, left top, right top, from(#ee8425), to(#f9488b));
 	background-image: -o-linear-gradient(left, #ee8425 0%, #f9488b 100%), -o-linear-gradient(left, #ee8425 0%, #f9488b 100%);
 	background-image: linear-gradient(to right, #ee8425 0%, #f9488b 100%), linear-gradient(to right, #ee8425 0%, #f9488b 100%);
+=======
+	background-image: -webkit-gradient(linear, left top, right top, from(#f9488b), to(#ee8425)), -webkit-gradient(linear, left top, right top, from(#f9488b), to(#ee8425));
+	background-image: -o-linear-gradient(left, #f9488b 0%, #ee8425 100%), -o-linear-gradient(left, #f9488b 0%, #ee8425 100%);
+	background-image: linear-gradient(to right, #f9488b 0%, #ee8425 100%), linear-gradient(to right, #f9488b 0%, #ee8425 100%);
+>>>>>>> a2f85521e6f06a9661adafc47a833366481dc77f
 }
 
 .site-btn {
@@ -1422,9 +1392,15 @@ ol {
 }
 
 .testimonial-slider.owl-carousel .owl-nav button:hover {
+<<<<<<< HEAD
 	background: -webkit-gradient(linear, left top, right top, from(#ee8425), to(#f9488b));
 	background: -o-linear-gradient(left, #ee8425, #f9488b);
 	background: linear-gradient(to right, #ee8425, #f9488b);
+=======
+	background: -webkit-gradient(linear, left top, right top, from(#f9488b), to(#ee8425));
+	background: -o-linear-gradient(left, #f9488b, #ee8425);
+	background: linear-gradient(to right, #f9488b, #ee8425);
+>>>>>>> a2f85521e6f06a9661adafc47a833366481dc77f
 	color: #ffffff;
 }
 
@@ -1539,8 +1515,13 @@ ol {
 }
 
 .speaker-item .si-text .si-social a:hover {
+<<<<<<< HEAD
 	background: -o-linear-gradient(330deg, #ee8425, #f9488b);
 	background: linear-gradient(120deg, #ee8425, #f9488b);
+=======
+	background: -o-linear-gradient(330deg, #f9488b, #ee8425);
+	background: linear-gradient(120deg, #f9488b, #ee8425);
+>>>>>>> a2f85521e6f06a9661adafc47a833366481dc77f
 	color: #ffffff;
 }
 
@@ -1667,8 +1648,13 @@ ol {
 }
 
 .schedule-table-tab .schedule-table-content table tbody tr td.hover-bg:hover {
+<<<<<<< HEAD
 	background: -o-linear-gradient(330deg, #ee8425, #f9488b);
 	background: linear-gradient(120deg, #ee8425, #f9488b);
+=======
+	background: -o-linear-gradient(330deg, #f9488b, #ee8425);
+	background: linear-gradient(120deg, #f9488b, #ee8425);
+>>>>>>> a2f85521e6f06a9661adafc47a833366481dc77f
 }
 
 .schedule-table-tab .schedule-table-content table tbody tr td.hover-bg:hover h5 {
@@ -2509,9 +2495,15 @@ ol {
 }
 
 {
+<<<<<<< HEAD
     "primary": #f9488b,
     "secondary": #82263D,
     "third": #ee8425,
+=======
+    "primary": #ee8425,
+    "secondary": #82263D,
+    "third": #f9488b,
+>>>>>>> a2f85521e6f06a9661adafc47a833366481dc77f
     "fourth": #9A7884,
     "contrast": #7FB689
 }
@@ -2520,4 +2512,23 @@ ol {
 	color:#f9488b ;
 	font-size: 25px;
 	font-weight: bolder;
+}
+
+.cardOut{
+	border-radius: 1rem !important;
+	background: linear-gradient(to right, #f9488b, #ee8425);
+	padding: 2px !important;
+	position: relative;
+}
+.cardIn{
+	background-color: #fff;
+	width: 100%;
+	height: 100%;
+	border: none;
+	border-radius: 7px !important; 
+	position: relative;
+}
+.card-img-top{
+	border-top-left-radius: 7px !important; 	
+	border-top-right-radius: 7px !important; 	
 }
