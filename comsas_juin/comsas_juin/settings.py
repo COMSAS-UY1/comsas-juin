@@ -22,9 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "q4ms+0cu+lhe^wg+dma_#h@ufti4!n&1=xi437u=&rgyg4x9ss"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['juin.comsas.club', 'www.juin.comsas.club']
 
 # Application definition
 
