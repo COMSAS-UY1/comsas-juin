@@ -350,7 +350,7 @@ ol {
 	margin: 27px 0;
 
 	color: white;
-
+}
 .slicknav_menu {
 	display: none;
 }
@@ -2469,14 +2469,6 @@ ol {
 		line-height: 35px;
 		margin-left: 5px;
 	}
-}
-
-{
-    "primary": #ee8425,
-    "secondary": #82263D,
-    "third": #f9488b,
-    "fourth": #9A7884,
-    "contrast": #7FB689
 }
 
 .initiales{

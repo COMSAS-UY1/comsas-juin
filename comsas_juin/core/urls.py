@@ -1,5 +1,5 @@
 from django.urls import path
-from core.views import SpeakerView, ContactView, ScheduleView, AboutView,SolutionChallengeView
+from core.views import SpeakerView, ContactView, ScheduleView, AboutView, IndexView, SolutionChallengeView
 
 app_name = 'core'
 
