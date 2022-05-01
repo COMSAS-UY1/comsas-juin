@@ -26,21 +26,19 @@ class IndexView(View):
         sliders = Slider.objects.all()
         # Partners context data
         partners = Partner.objects.all()
-        return render(
-            request,
-            self.template_name,
-            context={
-                "speakers": speakers,
-                "day_1": day_1,
-                "day_2": day_2,
-                "day_3": day_3,
-                "day_4": day_4,
-                "day_5": day_5,
-                "day_6": day_6,
-                "sliders": sliders,
-                "partners": partners,
-            },
-        )
+        return render(request,
+                      self.template_name,
+                      context={
+                          'speakers': speakers,
+                          'day_1': day_1,
+                          'day_2': day_2,
+                          'day_3': day_3,
+                          'day_4': day_4,
+                          'day_5': day_5,
+                          'day_6': day_6,
+                          'sliders': sliders,
+                          'partners': partners,
+                      })
 
 
 class AboutView(TemplateView):
@@ -54,13 +52,11 @@ class SpeakerView(View):
         # Speakers context data
         speakers = Speaker.objects.all()
 
-        return render(
-            request,
-            self.template_name,
-            context={
-                "speakers": speakers,
-            },
-        )
+        return render(request,
+                      self.template_name,
+                      context={
+                          'speakers': speakers,
+                      })
 
 
 class ContactView(View):
