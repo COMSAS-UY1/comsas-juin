@@ -65,3 +65,7 @@ class ContactView(View):
 
 class SolutionChallengeView(TemplateView):
     template_name = "core/solution.html"
+
+
+class TimeLineView(TemplateView):
+    template_name = "core/time_line.html"
