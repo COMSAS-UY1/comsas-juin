@@ -61,3 +61,7 @@ class SpeakerView(View):
 
 class ContactView(View):
     template_name = "core/contact.html"
+
+
+class SolutionChallengeView(TemplateView):
+    template_name = "core/solution.html"

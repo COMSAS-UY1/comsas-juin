@@ -329,6 +329,7 @@ ol {
 	padding: 42px 0;
 	position: relative;
 	display: inline-block;
+	text-decoration: none;
 }
 
 .nav-menu .mainmenu ul li a:after {
@@ -347,11 +348,14 @@ ol {
 
 .nav-menu .primary-btn.top-btn {
 	margin: 27px 0;
-	text-decoration: none;
-}
+
+	color: white;
 
 .slicknav_menu {
 	display: none;
+}
+.nav-menu a {
+	text-decoration: none;
 }
 
 /*---------------------
