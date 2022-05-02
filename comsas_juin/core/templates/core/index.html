@@ -1,4 +1,4 @@
-
+{% load i18n %}
 {% extends 'core/base.html' %}
 
 {% load static %}
@@ -26,8 +26,8 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="counter-text">
-                        <span>Comptez à rebour avec nous chaque secondes<br />jusqu'a l'evenement</span>
-                        <h3 class="fw-bold">les J.U. IN débutent dans</h3>
+                        <span>{% blocktrans %}Comptez à rebour avec nous chaque secondes<br />jusqu'a l'evenement{% endblocktrans %}</span>
+                        <h3 class="fw-bold">{% trans "les J.U. IN débutent dans" %}</h3>
                     </div>
                 </div>
                 <div class="col-lg-8">
