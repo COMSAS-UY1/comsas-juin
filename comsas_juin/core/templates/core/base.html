@@ -46,7 +46,7 @@
             <div class="logo">
                 <a href="./index.html">
 
-                    <img src = "{% static 'core/img/logos/logo.png' %}" alt="" width="75px" height="75px">
+                    <img src = "{% static 'core/img/logos/logo.png' %}" alt="" width="180px" height="80px" style="margin-top:12px;">
 
                 </a>
             </div>
@@ -68,7 +68,7 @@
                     </ul>
                 </nav>
 
-                <a href="#" class="primary-btn top-btn solution pt-4" style="text-decoration: none;">Solution Challenge</a>
+                <a href="{% url 'core:solution-challenge' %}" class="primary-btn top-btn solution pt-4" style="text-decoration: none;">Solution Challenge</a>
 
             </div>
             <div id="mobile-menu-wrap"></div>
