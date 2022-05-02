@@ -1,0 +1,210 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{% static 'core/css/solution_challenge_css/bootstrap.min.css' %}" type="text/css">
+	<link rel="stylesheet" href="{% static 'core/css/solution_challenge_css/time.css' %}" type="text/css">
+	<title>J.U.IN | Solution Challenge</title>
+</head>
+<body style="background: url(static/core/img/sb.png); height: 100vh; background-repeat:no-repeat;">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background: transparent !important;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src = "{% static 'core/img/logos/logo.png' %}" alt="" width="180px" height="75px"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item title">
+          Solution Challenge
+        </li>
+      </ul>
+      <ul class="navbar-nav me-5 ">
+        <li class="nav-item other">
+          <a class="nav-link p-2 text-white fw-bolder" href="{% url 'core:solution_challenge' %}">Challenge</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link p-2 text-white fw-bolder" href="{% url 'core:time_line' %}">Timeline</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<section>
+  <div class="d-flex w-100 row container mx-auto">
+    <div class="col-lg-6">
+      <h2 class="container mt-5 pt-5 text-secondary mb-5">
+        SOLUTION CHALLENGE DE LA <br /> 17 <sup>éme</sup> ÉDITION DES J.U.IN
+      </h2>
+        <p class="container fs-5">
+          Prêt à commencer ? <br />
+        </p>
+        <p class="container fs-5">
+          Voici un aperçu de la chronologie du programme et de la manière de commencer votre parcours avec le Solution Challenge de cette année. 
+        </p>
+    </div>
+    <div class="col-lg-6">
+      <img src="{% static 'core/img/time.svg' %}" class="card-img-top ms-5 img-fluid" alt="..." style="width:50rem;">
+    </div>
+  </div>
+</section>
+
+<section >
+  <div class="d-flex w-100 row container mx-auto">
+    <div class="col-lg-6">
+      <img src="{% static 'core/img/ehealth.svg' %}" class="card-img-top ms-5 img-fluid" alt="..." style="width:50rem;">
+    </div>
+    <div class="col-lg-6">
+      <h2 class="container mt-5 pt-5 text-secondary mb-5">
+        SOLUTION CHALLENGE DE LA <br /> 17 <sup>éme</sup> ÉDITION DES J.U.IN
+      </h2>
+        <p class="container fs-5">
+          Prêt à commencer ? <br />
+        </p>
+        <p class="container fs-5">
+          Voici un aperçu de la chronologie du programme et de la manière de commencer votre parcours avec le Solution Challenge de cette année. 
+        </p>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container w-100 row mx-auto d-flex steps">
+    <div class="col step m-1 text-center">
+      <h4 class="pb-1">Step 1</h4>
+
+      <p class="pt-3">Formez une équipe et enregistrez-vous</p>
+    </div>
+    <div class="col step m-1 text-center">
+      <h4 class="pb-1">Step 2</h4>
+
+      <p class="pt-1">Formez une équipe et enregistrez-vous</p>
+    </div>
+    <div class="col step m-1 text-center">
+      <h4 class="pb-1">Step 3</h4>
+
+      <p class="pt-1">Formez une équipe et enregistrez-vous</p>
+    </div>
+    <div class="col step m-1 text-center">
+      <h4 class="pb-1">Step 4</h4>
+
+      <p class="pt-1">Formez une équipe et enregistrez-vous</p>
+    </div>
+    <div class="col step m-1 text-center">
+      <h4 class="pb-1">Step 5</h4>
+
+      <p class="pt-1">Formez une équipe et enregistrez-vous</p>
+    </div>
+    <div class="col step m-1 text-center">
+      <h4 class="pb-1">Step 6</h4>
+
+      <p class="pt-1">Formez une équipe et enregistrez-vous</p>
+    </div>
+    <div class="col step m-1 text-center">
+      <h4 class="pb-1">Step 7</h4>
+
+      <p class="pt-1">Formez une équipe et enregistrez-vous</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="mt-5 pt-5">
+  <div class="row w-100 d-flex container-fluid">
+    <div class="col-lg-6">
+      <div class="card mb-3 border-0" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{% static 'core/img/1.svg' %}" class="card-img-top mt-4 img-fluid" alt="..." style="margin-top: -2.5rem; width: 60px; height: 60px;">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Formez une équipe et enregistrez-vous</h5>
+              <p class="card-text">Formez une équipe de 4 personnes, avec au moins un étudiant de l'université du Google Developer Student Club, et idéalement avec un ensemble</p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3 border-0" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{% static 'core/img/3.svg' %}" class="card-img-top mt-4 img-fluid" alt="..." style="margin-top: -2.5rem; width: 60px; height: 60px;">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Formez une équipe et enregistrez-vous</h5>
+              <p class="card-text">Formez une équipe de 4 personnes, avec au moins un étudiant de l'université du Google Developer Student Club, et idéalement avec un ensemble</p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3 border-0" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{% static 'core/img/5.svg' %}" class="card-img-top mt-4 img-fluid" alt="..." style="margin-top: -2.5rem; width: 60px; height: 60px;">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Formez une équipe et enregistrez-vous</h5>
+              <p class="card-text">Formez une équipe de 4 personnes, avec au moins un étudiant de l'université du Google Developer Student Club, et idéalement avec un ensemble</p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card mb-3 border-0" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{% static 'core/img/2.svg' %}" class="card-img-top mt-4 img-fluid" alt="..." style="margin-top: -2.5rem; width: 60px; height: 60px;">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Formez une équipe et enregistrez-vous</h5>
+              <p class="card-text">Formez une équipe de 4 personnes, avec au moins un étudiant de l'université du Google Developer Student Club, et idéalement avec un ensemble </p>
+              
+            </div>
+          </div>
+        </div>
+
+      <div class="card mb-3 border-0" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{% static 'core/img/4.svg' %}" class="card-img-top mt-4 img-fluid" alt="..." style="margin-top: -2.5rem; width: 60px; height: 60px;">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Formez une équipe et enregistrez-vous</h5>
+              <p class="card-text">Formez une équipe de 4 personnes, avec au moins un étudiant de l'université du Google Developer Student Club, et idéalement avec un ensemble</p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3 border-0" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{% static 'core/img/1.svg' %}" class="card-img-top mt-4 img-fluid" alt="..." style="margin-top: -2.5rem; width: 60px; height: 60px;">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Formez une équipe et enregistrez-vous</h5>
+              <p class="card-text">Formez une équipe de 4 personnes, avec au moins un étudiant de l'université du Google Developer Student Club, et idéalement avec un ensemble</p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+</body>
+</html>

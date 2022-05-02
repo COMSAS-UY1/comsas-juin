@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+*{
+  font-family: 'Lato', sans-serif;
+}
+
+.title {
+  background: -webkit-linear-gradient(25deg, rgb(244, 145, 32), #f44949);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.4rem;
+  font-weight: bolder;
+}
+
+.log{
+  text-decoration: none;
+  background: linear-gradient(25deg, rgb(244, 145, 32), #f44949);
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.log:hover{
+  color: white;
+}
+
+.active{
+  border-bottom: 3px solid white;
+}
+.other:hover{
+ border-bottom: 3px solid white; 
+}
