@@ -23,6 +23,7 @@ class Journey(models.Model):
 class Speaker(models.Model):
     full_name = models.CharField(max_length=50)
     profile = models.ImageField(upload_to="images/speakers/")
+    role = models.CharField(max_length=50, null=True, default="Speaker")
     email = models.EmailField(null=False, blank=True)
     facebook = models.URLField(null=True, blank=True)
     twitter = models.URLField(null=True, blank=True)
