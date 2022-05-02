@@ -20,11 +20,23 @@ This repository aims at building a website for the University Days of Computer S
 ### Before executing the following commands, always make sure you are at the root of the project.
 
 3. Setup the virtual environment for the project at its root by running the following commands: <br>
-    `Creation/Installation`
+    
 
-        1. pip install virtualenv
-        2a. virtualenv .venv
-        2b. python -m virtualenv .venv
+        How to install virtualenv:
+
+### Install **pip** first
+
+    sudo apt-get install python3-pip
+
+### Then install **virtualenv** using pip3
+
+    sudo pip3 install virtualenv 
+
+### Now create a virtual environment 
+
+    virtualenv venv 
+
+>you can use any name insted of **venv**
    
     `Activation on Windows`
     
@@ -32,7 +44,7 @@ This repository aims at building a website for the University Days of Computer S
    
     `Activation on Linux/MacOS`
     
-        3. source .\venv/bin/activate
+        3. source venv/bin/activate
 
     To deactivate the already activated virtual environment, simply type `deactivate` in the terminal, if not run the following command: <br>
 
@@ -42,7 +54,7 @@ This repository aims at building a website for the University Days of Computer S
 
     `Deactivation on Linux/MacOS`
 
-        source .venv/bin/deactivate
+        deactivate
 
 4. Inside the created and activated virtual environment, `Install` the required packages from [requirements.txt](./requirements.txt) by running the command: <br>
 
