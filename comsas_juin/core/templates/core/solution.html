@@ -6,10 +6,100 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="{% static 'core/css/bootstrap.min.css' %}" type="text/css">
+	<link rel="stylesheet" href="{% static 'core/css/solution_challenge_css/bootstrap.min.css' %}" type="text/css">
+	<link rel="stylesheet" href="{% static 'core/css/solution_challenge_css/solution.css' %}" type="text/css">
 	<title>J.U.IN | Solution Challenge</title>
 </head>
-<body>
-	<h1>This is the solution challenge</h1>
+<body style="background: url(static/core/img/sb.png); height: 100vh; background-repeat:no-repeat;">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background: transparent !important;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src = "{% static 'core/img/logos/logo.png' %}" alt="" width="180px" height="75px"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item title">
+          <h3>Solution Challenge</h3> 
+        </li>
+      </ul>
+      <ul class="navbar-nav me-5 ">
+        <li class="nav-item active">
+          <a class="nav-link p-2 text-white fw-bolder" href="{% url 'core:solution-challenge' %}">Challenge</a>
+        </li>
+        <li class="nav-item other">
+          <a class="nav-link p-2 text-white fw-bolder" href="{% url 'core:time-line' %}">Timeline</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section>
+	<div class="d-flex w-100 container mx-auto">
+		<div class="col-lg-6">
+			<h2 class="container mt-5 pt-5 text-secondary mb-3">
+				SOLUTION CHALLENGE DE LA <br /> 17 <sup>éme</sup> ÉDITION DES J.U.IN
+			</h2>
+				<p class="container fs-5">
+					 L'objectif de la <span class="fw-bold"> Solution Challenge</span> est de concevoir une solution portant sur le théme de la 17 <sup>ème</sup> Édition des J.U.IN .
+				</p>
+				<p class="container fs-5">
+					
+					La solution challenge est ouverte à tout étudiants désireux de réaliser un projet  
+				</p>
+				<i class="container fs-5">S'inscire avant le xx/xx/2022. </i>
+
+				<p class="container mt-5"><a href="#" class="log p-2 ps-4 pe-4">S'inscrire</a></p>
+		</div>
+		<div class="col-lg-6">
+			<img src="{% static 'core/img/challenge.svg' %}" class="card-img-top ms-5 img-fluid" alt="..." style="width:50rem;">
+		</div>
+	</div>
+</section>
+<section>
+	<div class="mx-auto">
+		<h1 class="title text-center fs-1 mb-5">Prix</h1>
+	</div>
+	<div class="container w-100 row mx-auto">
+		<div class="col-lg-3 border border-danger mx-auto m-1 text-left rounded-3 shadow">
+			<img src="{% static 'core/img/1.svg' %}" class="card-img-top border border-white border-5 img-fluid" alt="..." style="margin-top: -2.5rem; width: 60px; height: 60px;">
+			<h2>Premier Prix</h2>
+			<p class="fs-6 ps-2">Win a T-shirt, certificate, and mentorship from Googlers and other experts to improve and submit a solution for the top prize. </p>
+		</div>
+		<div class="col-lg-3 border border-danger mx-auto m-1 text-left rounded-3 shadow">
+			<img src="{% static 'core/img/2.svg' %}" class="card-img-top border border-white border-5 img-fluid" alt="..." style="margin-top: -2.5rem; width: 60px; height: 60px;">
+			<h2>Deuxième Prix</h2>
+			<p class="fs-6 ps-2">Win a T-shirt, certificate, and mentorship from Googlers and other experts to improve and submit a solution for the top prize. </p>
+		</div>
+		<div class="col-lg-3 border border-danger mx-auto m-1 text-left rounded-3 shadow">
+			<img src="{% static 'core/img/3.svg' %}" class="card-img-top border border-white border-5 img-fluid" alt="..." style="margin-top: -2.5rem; width: 60px; height: 60px;">
+			<h2>Troisième Prix</h2>
+			<p class="fs-6" ps-2>Win a T-shirt, certificate, and mentorship from Googlers and other experts to improve and submit a solution for the top prize. </p>
+		</div>
+		
+	</div>
+</section>
+<section >
+	<div class="mx-auto">
+		<h1 class="title text-center fs-1 mt-5">Buts</h1>
+	</div>
+  <div class="d-flex w-100 row container mx-auto">
+    <div class="col-lg-6">
+      <img src="{% static 'core/img/ehealth.svg' %}" class="card-img-top ms-5 img-fluid" alt="..." style="width:50rem;">
+    </div>
+    <div class="col-lg-6">
+      <h2 class="container mt-5 pt-5 text-secondary mb-5">
+        SOLUTION CHALLENGE DE LA <br /> 17 <sup>éme</sup> ÉDITION DES J.U.IN
+      </h2>
+        <p class="container fs-5">
+          Prêt à commencer ? <br />
+        </p>
+        <p class="container fs-5">
+          Voici un aperçu de la chronologie du programme et de la manière de commencer votre parcours avec le Solution Challenge de cette année. 
+        </p>
+    </div>
+  </div>
+</section>
 </body>
 </html>

@@ -47,7 +47,7 @@
             <div class="logo">
                 <a href="./index.html">
 
-                    <img src = "{% static 'core/img/logos/logo.png' %}" alt="" width="75px" height="75px">
+                    <img src = "{% static 'core/img/logos/logo.png' %}" alt="" width="180px" height="80px" style="margin-top:12px;">
 
                 </a>
             </div>
@@ -69,7 +69,7 @@
                     </ul>
                 </nav>
 
-                <a href="#" class="primary-btn top-btn solution pt-4" style="text-decoration: none;">Solution Challenge</a>
+                <a href="{% url 'core:solution-challenge' %}" class="primary-btn top-btn solution pt-4" style="text-decoration: none;">Solution Challenge</a>
 
             </div>
             <div id="mobile-menu-wrap"></div>
@@ -87,23 +87,6 @@
 
 
 {% block footer %}
-    <!-- Newslatter Section Begin -->
-    <section class="newslatter-section about-newslatter mb-4 mt-4">
-        <div class="container">
-            <div class="newslatter-inner set-bg" data-setbg= "{% static 'core/img/newslatter-bg.jpg' %}">
-                <div class="ni-text">
-                    <h3>Subscribe Newsletter</h3>
-                    <p>Subscribe to our newsletter and don’t miss anything</p>
-                </div>
-                <form action="#" class="ni-form">
-                    <input type="text" placeholder="Your email">
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-        </div>
-    </section>
-    <!-- Newslatter Section End -->
-
 
     {% block localisation %}
             <!-- Contact Section Begin -->

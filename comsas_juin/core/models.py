@@ -12,9 +12,18 @@ class Edition(models.Model):
         return self.name
 
 
+class Journey(models.Model):
+    date = models.DateField()
+    is_the_first_date = models.BooleanField(default=False)
+
+    def __str__(self):
+        return str(self.date)
+
+
 class Speaker(models.Model):
     full_name = models.CharField(max_length=50)
     profile = models.ImageField(upload_to="images/speakers/")
+    role = models.CharField(max_length=50, null=True, default="Speaker")
     email = models.EmailField(null=False, blank=True)
     facebook = models.URLField(null=True, blank=True)
     twitter = models.URLField(null=True, blank=True)
@@ -35,7 +44,7 @@ class Event(models.Model):
     directed_by = models.ForeignKey(Speaker, models.CASCADE)
     start_time = models.TimeField()
     end_time = models.TimeField()
-    date = models.DateField()
+    date = models.ForeignKey(Journey, models.CASCADE)
     edition = models.ForeignKey(Edition, models.CASCADE)
 
     def __str__(self):

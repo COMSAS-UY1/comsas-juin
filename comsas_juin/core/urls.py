@@ -1,5 +1,5 @@
 from django.urls import path
-from core.views import SpeakerView, ContactView, ScheduleView, AboutView, IndexView, SolutionChallengeView
+from core.views import SpeakerView, ContactView, ScheduleView, AboutView, IndexView, TimeLineView, SolutionChallengeView
 
 app_name = 'core'
 
@@ -9,6 +9,7 @@ urlpatterns = [
     path('contact', ContactView.as_view(), name='contact'),
     path('schedule', ScheduleView.as_view(), name='schedule'),
     path('about', AboutView.as_view(), name='about'),
-    path('solution_challenge', SolutionChallengeView.as_view(), name='solution_challenge'),
+    path('solution-challenge', SolutionChallengeView.as_view(), name='solution-challenge'),
+    path('time-line', TimeLineView.as_view(), name='time-line'),
    
 ]
