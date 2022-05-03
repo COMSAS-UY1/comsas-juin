@@ -38,7 +38,7 @@ class AboutView(TemplateView):
     template_name = "core/about.html"
 
 
-class SpeakerView(View):
+class SpeakerView(TemplateView):
     template_name = "core/speaker.html"
 
     def get(self, request, *args, **kwargs):
@@ -63,4 +63,5 @@ class SolutionChallengeView(TemplateView):
 
 
 class TimeLineView(TemplateView):
-    template_name = "core/time_line.html"
+    template_name = "core/time-line.html"
+
