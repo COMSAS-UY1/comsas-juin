@@ -1,3 +1,4 @@
+from asyncio import events
 from django.db import models
 
 
@@ -19,11 +20,36 @@ class Journey(models.Model):
     def __str__(self):
         return str(self.date)
 
+    def get_event(self):
+        return self.events.all().order_by("date")
 
-class Speaker(models.Model):
+
+class Event(models.Model):
+    flyers = models.ImageField(upload_to="images/events/")
+    location = models.CharField(max_length=200)
+    title = models.CharField(max_length=200)
+    start_time = models.TimeField()
+    end_time = models.TimeField()
+    date = models.ForeignKey(Journey, models.CASCADE, related_name="events")
+    edition = models.ForeignKey(Edition, models.CASCADE, related_name="events")
+
+    def __str__(self):
+        return self.title
+
+    def get_speaker(self):
+        return SpeakerEvent.objects.filter(event=self.id).order_by("event__date")
+
+
+class Person(models.Model):
+    ROLE = (
+        ("Speaker", "speaker"),
+        ("Organizer", "organizer"),
+        ("Contributor", "contributor"),
+    )
     full_name = models.CharField(max_length=50)
     profile = models.ImageField(upload_to="images/speakers/")
-    role = models.CharField(max_length=50, null=True, default="Speaker")
+    post = models.CharField(max_length=200, null=True, blank=True)
+    role = models.CharField(max_length=50, null=True, choices=ROLE)
     email = models.EmailField(null=False, blank=True)
     facebook = models.URLField(null=True, blank=True)
     twitter = models.URLField(null=True, blank=True)
@@ -31,24 +57,17 @@ class Speaker(models.Model):
     website = models.URLField(null=True, blank=True)
     github = models.URLField(null=True, blank=True)
     about = models.TextField()
-    edition = models.ForeignKey(Edition, models.CASCADE)
+    edition = models.ForeignKey(
+        Edition, models.SET_NULL, null=True, blank=True, related_name="persons"
+    )
 
     def __str__(self):
         return self.full_name
 
 
-class Event(models.Model):
-    flyers = models.ImageField(upload_to="images/events/")
-    location = models.CharField(max_length=200)
-    title = models.CharField(max_length=200)
-    directed_by = models.ForeignKey(Speaker, models.CASCADE)
-    start_time = models.TimeField()
-    end_time = models.TimeField()
-    date = models.ForeignKey(Journey, models.CASCADE)
-    edition = models.ForeignKey(Edition, models.CASCADE)
-
-    def __str__(self):
-        return self.title
+class SpeakerEvent(models.Model):
+    event = models.ForeignKey(Event, models.CASCADE)
+    speaker = models.ForeignKey(Person, models.CASCADE)
 
 
 class Partner(models.Model):
@@ -57,7 +76,7 @@ class Partner(models.Model):
     web_site = models.URLField(max_length=200, null=True, blank=True)
     phone_number = models.CharField(max_length=15, null=True, blank=True)
     description = models.TextField()
-    edition = models.ForeignKey(Edition, models.CASCADE)
+    edition = models.ForeignKey(Edition, models.CASCADE, related_name="partners")
 
     def __str__(self):
         return self.name

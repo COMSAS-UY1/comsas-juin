@@ -1,4 +1,3 @@
-
 {% extends 'core/base.html' %}
 {% load i18n %}
 {% load static %}
@@ -178,34 +177,31 @@
                 <div class="col-lg-12">
                     <div class="schedule-tab">
                         <ul class="nav nav-tabs" role="tablist">
-                            {% if journeys %}
+                            {% for journey in journeys %}
+                                {% if  journey.is_the_first_date %}
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-toggle="tab" href="#tabs-{{ forloop.counter}}" role="tab">
+                                            <h5> Jour {{ forloop.counter }}</h5>
+                                            <p>{{ journey.date | date:'d-m-Y' }}</p>
+                                        </a>
+                                    </li>
+                                {% else %}
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#tabs-{{ forloop.counter }}" role="tab">
+                                            <h5> Jour {{ forloop.counter }}</h5>
+                                            <p>{{ journey.date | date:'d-m-Y' }}</p>
+                                        </a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
                             
-                                {% for journey in journeys %}
-                                    {% if journey.is_the_first_date %}
-                                        <li class="nav-item">
-                                            <a class="nav-link active" data-toggle="tab" href="#tabs-{{ journey.id }}" role="tab">
-                                                <h5> Jour {{ journey.id }}</h5>
-                                                <p>{{ journey.date | date:'d-m-Y' }}</p>
-                                            </a>
-                                        </li>
-                                    {% else %}
-                                        <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#tabs-{{ journey.id }}" role="tab">
-                                                <h5> Jour {{ journey.id }}</h5>
-                                                <p>{{ journey.date | date:'d-m-Y' }}</p>
-                                            </a>
-                                        </li>
-                                    {% endif %}
-                                {% endfor %}
                             
-                            {% endif %}
                         </ul><!-- Tab panes -->
                         <div class="tab-content">
                             {% for journey in journeys %}
                                 {% if journey.is_the_first_date %}
-                                    <div class="tab-pane active" id="tabs-{{ journey.id }}" role="tabpanel">
-                                        {% for event in events %}
-                                            {% if event.date.id == journey.id %}
+                                    <div class="tab-pane active" id="tabs-{{ forloop.counter }}" role="tabpanel">
+                                        {% for event in journey.get_event %}
                                                 <div class="st-content">
                                                     <div class="container">
                                                         <div class="row">
@@ -218,9 +214,9 @@
                                                                 <div class="sc-text">
                                                                     <h4>{{ event.title }}</h4>
                                                                     <ul>
-                                                                        <li><i class="fa fa-user"></i> {{ event.directed_by.full_name }}</li>
+                                                                        <li><i class="fa fa-user"></i> {% for elt in event.get_speaker %}{{elt.speaker.full_name}}{% endfor %}</li>
                                                                         <li><i class="fa fa-envelope"></i>
-                                                                            {{ event.directed_by.email }}
+                                                                            {% for elt in event.get_speaker %} {{ event.get_speaker.speaker.email }} {% endfor %}
                                                                         </li>
                                                                     </ul>
                                                                 </div>
@@ -236,13 +232,11 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            {% endif %}
                                         {% endfor %}
                                     </div>
                                 {% else %}
-                                    <div class="tab-pane" id="tabs-{{ journey.id }}" role="tabpanel">
-                                        {% for event in events %}
-                                            {% if event.date.id == journey.id %}
+                                    <div class="tab-pane" id="tabs-{{ forloop.counter }}" role="tabpanel">
+                                        {% for event in journey.get_event %}
                                                 <div class="st-content">
                                                     <div class="container">
                                                         <div class="row">
@@ -255,9 +249,9 @@
                                                                 <div class="sc-text">
                                                                     <h4>{{ event.title }}</h4>
                                                                     <ul>
-                                                                        <li><i class="fa fa-user"></i> {{ event.directed_by.full_name }}</li>
+                                                                        <li><i class="fa fa-user"></i> {% for elt in event.get_speaker %}{{elt.speaker.full_name}} - {% endfor %}</li>
                                                                         <li><i class="fa fa-envelope"></i>
-                                                                            {{ event.directed_by.email }}
+                                                                            {% for elt in event.get_speaker %} {{ event.get_speaker.speaker.email }} {% endfor %}
                                                                         </li>
                                                                     </ul>
                                                                 </div>
@@ -273,7 +267,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            {% endif %}
                                         {% endfor %}
                                     </div>
                                 {% endif %}
@@ -288,7 +281,30 @@
     <!-- Schedule Section End -->
 
 
-    <div class="mb-5">{% include 'core/includes/commite.html' %}</div>
+    <div class="mb-5">
+        <section class="mb-3">
+            <div class="card-group container mb-5">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2 class="text-dark">Commité organisateur</h2>
+                    </div>
+                </div>
+                {% for organizer in organizers %}
+                    <div class="card cardOut m-1">
+                        <div class="cardIn">
+                            <img src="{{organizer.profile.url}}" class="card-img-top" alt="{{organizer.full_name}}" style="height: auto;">
+                            <div class="card-body">
+                                <h2 class="card-title">{{organizer.full_name}}</h2>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+              
+            </div>
+            
+        </section>
+    </div>
     {% comment %} <div>{% include 'core/includes/location.html' %}</div> {% endcomment %}
     
 {% endblock %}

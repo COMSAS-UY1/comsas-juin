@@ -1,7 +1,6 @@
-from datetime import datetime
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.views.generic import TemplateView, View
-from .models import Event, Journey, Partner, Slider, Speaker
+from .models import Edition, Event, Journey, Partner, Slider, Person
 
 
 class ScheduleView(TemplateView):
@@ -12,16 +11,19 @@ class IndexView(View):
     template_name = "core/index.html"
 
     def get(self, request, *args, **kwargs):
+        # get curret edition
+        current_edition = get_object_or_404(Edition, status="active")
         # Speakers context data
-        speakers = Speaker.objects.all()
+        speakers = current_edition.persons.filter(role="Speaker")
+        print(speakers)
         # Journeys context data
         journeys = Journey.objects.all().order_by("date")
         # Events context data
-        events = Event.objects.all().order_by("start_time")
+        events = current_edition.events.all().order_by("start_time")
         # Sliders context data
         sliders = Slider.objects.all()
         # Partners context data
-        partners = Partner.objects.all()
+        partners = current_edition.partners.all()
         return render(
             request,
             self.template_name,
@@ -31,6 +33,7 @@ class IndexView(View):
                 "events": events,
                 "sliders": sliders,
                 "partners": partners,
+                "organizers": current_edition.persons.filter(role="Organizer"),
             },
         )
 
@@ -39,13 +42,14 @@ class AboutView(TemplateView):
     template_name = "core/about.html"
 
 
-class SpeakerView(TemplateView):
+class SpeakerView(View):
     template_name = "core/speaker.html"
 
     def get(self, request, *args, **kwargs):
+        # get curret edition
+        current_edition = get_object_or_404(Edition, status="active")
         # Speakers context data
-        speakers = Speaker.objects.all()
-
+        speakers = current_edition.persons.filter(role="Speaker")
         return render(
             request,
             self.template_name,
@@ -65,4 +69,3 @@ class SolutionChallengeView(TemplateView):
 
 class TimeLineView(TemplateView):
     template_name = "core/time-line.html"
-
