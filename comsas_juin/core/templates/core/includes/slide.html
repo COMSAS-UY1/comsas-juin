@@ -2,19 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" >
 <head>
-<meta charset="UTF-8">
-<title>Bootstrap Carousel and Animate</title>
-<meta name="description" content="Bootstrap 4 slider with text animation.">
-<meta name="keywords" content="bootstrap 4 content slider, CSS, JavaScript, Carousel slider, Bootstrap 4 Responsive Slider with Text Animation, Responsive Slider, Image Slider, Animation, Free download bootstrap slider">
-<meta name="author" content="HTMLCSS3 Tutorials">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 <style>
-
-
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap');
-
 .container-fluid {
     overflow: hidden;
     padding: 0px;
@@ -26,9 +14,6 @@
 }
 .slide-text{
     font-weight: 900;
-}
-h1{
-    color: red;
 }
 </style>
 </head>
@@ -42,7 +27,11 @@ h1{
             <div id="carouselExampleIndicators" class="carousel slide">
                 <div class="carousel-inner"> 
                                             <!-- third slide -->
-                    <div class="carousel-item active"> <img src = "{% static 'core/images/s3.jpg' %}" alt="" style="height: 80vh; width: 100vw;"/>
+                    <div class="carousel-item active">
+                        <div class="bg-dark">
+                             <img src = "{% static 'core/images/s3.jpg' %}" alt="" style="height: 80vh; width: 100vw;" class="bg-dark" />
+                             
+                        </div>
                         <div class="slide-text slide_style_right">
                         <h1 style="font-weight: bolder;" data-animation="animated zoomInLeft">Découvrez le plus grand du Tech de l'UY1</h1>
                         <p data-animation="animated fadeInRight">filière informatique vous reserve des surprises.</p>
