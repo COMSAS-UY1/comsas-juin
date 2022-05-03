@@ -1,7 +1,6 @@
-from datetime import datetime
 from django.shortcuts import render
 from django.views.generic import TemplateView, View
-from .models import Event, Journey, Partner, Slider, Speaker
+from .models import Day, Event, Partner, Slider, Speaker
 
 
 class ScheduleView(TemplateView):
@@ -15,7 +14,7 @@ class IndexView(View):
         # Speakers context data
         speakers = Speaker.objects.all()
         # Journeys context data
-        journeys = Journey.objects.all().order_by("date")
+        days = Day.objects.all().order_by("date")
         # Events context data
         events = Event.objects.all().order_by("start_time")
         # Sliders context data
@@ -27,7 +26,7 @@ class IndexView(View):
             self.template_name,
             context={
                 "speakers": speakers,
-                "journeys": journeys,
+                "days": days,
                 "events": events,
                 "sliders": sliders,
                 "partners": partners,
