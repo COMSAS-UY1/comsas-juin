@@ -3,8 +3,19 @@ from django.views.generic import TemplateView, View
 from .models import Edition, Event, Journey, Partner, Slider, Person
 
 
-class ScheduleView(TemplateView):
+class ScheduleView(View):
     template_name = "core/schedule.html"
+
+    def get(self, request, *args, **kwargs):
+        # Journeys context data
+        journeys = Journey.objects.all().order_by("date")
+        return render(
+            request,
+            self.template_name,
+            context={
+                "journeys": journeys,
+            },
+        )
 
 
 class IndexView(View):
@@ -50,11 +61,14 @@ class SpeakerView(View):
         current_edition = get_object_or_404(Edition, status="active")
         # Speakers context data
         speakers = current_edition.persons.filter(role="Speaker")
+        # Journeys context data
+        journeys = Journey.objects.all().order_by("date")
         return render(
             request,
             self.template_name,
             context={
                 "speakers": speakers,
+                "journeys": journeys,
             },
         )
 
