@@ -20,15 +20,15 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item title">
-          Solution Challenge
+          <h3>Solution Challenge</h3> 
         </li>
       </ul>
       <ul class="navbar-nav me-5 ">
         <li class="nav-item active">
-          <a class="nav-link p-2 text-white fw-bolder" href="{% url 'core:solution_challenge' %}">Challenge</a>
+          <a class="nav-link p-2 text-white fw-bolder" href="{% url 'core:solution-challenge' %}">Challenge</a>
         </li>
         <li class="nav-item other">
-          <a class="nav-link p-2 text-white fw-bolder" href="{% url 'core:time_line' %}">Timeline</a>
+          <a class="nav-link p-2 text-white fw-bolder" href="{% url 'core:time-line' %}">Timeline</a>
         </li>
       </ul>
     </div>
@@ -58,6 +58,9 @@
 	</div>
 </section>
 <section>
+	<div class="mx-auto">
+		<h1 class="title text-center fs-1 mb-5">Prix</h1>
+	</div>
 	<div class="container w-100 row mx-auto">
 		<div class="col-lg-3 border border-danger mx-auto m-1 text-left rounded-3 shadow">
 			<img src="{% static 'core/img/1.svg' %}" class="card-img-top border border-white border-5 img-fluid" alt="..." style="margin-top: -2.5rem; width: 60px; height: 60px;">
@@ -76,6 +79,27 @@
 		</div>
 		
 	</div>
+</section>
+<section >
+	<div class="mx-auto">
+		<h1 class="title text-center fs-1 mt-5">Buts</h1>
+	</div>
+  <div class="d-flex w-100 row container mx-auto">
+    <div class="col-lg-6">
+      <img src="{% static 'core/img/ehealth.svg' %}" class="card-img-top ms-5 img-fluid" alt="..." style="width:50rem;">
+    </div>
+    <div class="col-lg-6">
+      <h2 class="container mt-5 pt-5 text-secondary mb-5">
+        SOLUTION CHALLENGE DE LA <br /> 17 <sup>éme</sup> ÉDITION DES J.U.IN
+      </h2>
+        <p class="container fs-5">
+          Prêt à commencer ? <br />
+        </p>
+        <p class="container fs-5">
+          Voici un aperçu de la chronologie du programme et de la manière de commencer votre parcours avec le Solution Challenge de cette année. 
+        </p>
+    </div>
+  </div>
 </section>
 </body>
 </html>

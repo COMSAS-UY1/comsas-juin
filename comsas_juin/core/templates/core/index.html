@@ -63,21 +63,58 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="ha-pic">
-                        <img src = "{% static 'core/img/s2.jpg' %}">
+                        <img src = "{% static 'core/img/s2.jpg' %}" class="welcome_img">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="ha-text">
-                        <h2>Bienvenue à la 4éme édition des J.U.IN</h2>
+                        <h2>Bienvenue à la 17 <sup>ème</sup> édition des J.U.IN</h2>
                         <p> Les J.U.IN (<span class="initiales">J</span>ournées <span class="initiales">U</span>niversitaires de l'<span class="initiales">IN</span>formatiques) sont un ensemble d'activités organisées par le COM.S.A.S de l'Université de Yaoundé I avec pour objectif de faire valoir le potentiel des étudiants de la filière informatique.
                         <br>En conviant non seulement tous les etudiants de l'université mais aussi divers entreprises et investisseurs, le but est de faire découvrir au grand public les attouts que possèdent les étudiants de la dite filière. </p>
-                        <a href="#" class="primary-btn top-btn">En Savoir davantage</a>
+                        <a href="{% url 'core:about' %}" class="primary-btn text-white top-btn solution pt-4" style="text-decoration: none;">En savoir davantage</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- Home About Section End -->
+
+
+    <div class="sectiontitle">
+    <h2>Statistiques</h2>
+    <span class="headerLine"></span>
+</div>
+<div id="projectFacts" class="sectionClass">
+    <div class="fullWidth eight columns">
+        <div class="projectFactsWrap ">
+            <div class="item wow fadeInUpBig animated animated" data-number="12" style="visibility: visible;">
+                <i class="fa fa-briefcase"></i>
+                <p id="number1" class="number">12</p>
+                <span></span>
+                <p>Projets réalisés</p>
+            </div>
+            <div class="item wow fadeInUpBig animated animated" data-number="55" style="visibility: visible;">
+                <i class="fa fa-smile-o"></i>
+                <p id="number2" class="number">55</p>
+                <span></span>
+                <p>Nombre de participants</p>
+            </div>
+            <div class="item wow fadeInUpBig animated animated" data-number="359" style="visibility: visible;">
+                <i class="fa fa-coffee"></i>
+                <p id="number3" class="number">359</p>
+                <span></span>
+                <p>Entreprises invitées</p>
+            </div>
+            <div class="item wow fadeInUpBig animated animated" data-number="246" style="visibility: visible;">
+                <i class="fa fa-camera"></i>
+                <p id="number4" class="number">246</p>
+                <span></span>
+                <p>Jours</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
 <div class="card-group container mb-5">
                 <div class="col-lg-12">
