@@ -12,7 +12,7 @@ class Edition(models.Model):
         return self.name
 
 
-class Journey(models.Model):
+class Day(models.Model):
     date = models.DateField()
     is_the_first_date = models.BooleanField(default=False)
 
@@ -44,7 +44,7 @@ class Event(models.Model):
     directed_by = models.ForeignKey(Speaker, models.CASCADE)
     start_time = models.TimeField()
     end_time = models.TimeField()
-    date = models.ForeignKey(Journey, models.CASCADE)
+    date = models.ForeignKey(Day, models.CASCADE)
     edition = models.ForeignKey(Edition, models.CASCADE)
 
     def __str__(self):

@@ -177,21 +177,21 @@
                 <div class="col-lg-12">
                     <div class="schedule-tab">
                         <ul class="nav nav-tabs" role="tablist">
-                            {% if journeys %}
+                            {% if days %}
                             
-                                {% for journey in journeys %}
-                                    {% if journey.is_the_first_date %}
+                                {% for day in days %}
+                                    {% if day.is_the_first_date %}
                                         <li class="nav-item">
-                                            <a class="nav-link active" data-toggle="tab" href="#tabs-{{ journey.id }}" role="tab">
-                                                <h5> Jour {{ journey.id }}</h5>
-                                                <p>{{ journey.date | date:'d-m-Y' }}</p>
+                                            <a class="nav-link active" data-toggle="tab" href="#tabs-{{ day.id }}" role="tab">
+                                                <h5> Jour {{ day.id }}</h5>
+                                                <p>{{ day.date | date:'d-m-Y' }}</p>
                                             </a>
                                         </li>
                                     {% else %}
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#tabs-{{ journey.id }}" role="tab">
-                                                <h5> Jour {{ journey.id }}</h5>
-                                                <p>{{ journey.date | date:'d-m-Y' }}</p>
+                                            <a class="nav-link" data-toggle="tab" href="#tabs-{{ day.id }}" role="tab">
+                                                <h5> Jour {{ day.id }}</h5>
+                                                <p>{{ day.date | date:'d-m-Y' }}</p>
                                             </a>
                                         </li>
                                     {% endif %}
@@ -200,11 +200,11 @@
                             {% endif %}
                         </ul><!-- Tab panes -->
                         <div class="tab-content">
-                            {% for journey in journeys %}
-                                {% if journey.is_the_first_date %}
-                                    <div class="tab-pane active" id="tabs-{{ journey.id }}" role="tabpanel">
+                            {% for day in days %}
+                                {% if day.is_the_first_date %}
+                                    <div class="tab-pane active" id="tabs-{{ day.id }}" role="tabpanel">
                                         {% for event in events %}
-                                            {% if event.date.id == journey.id %}
+                                            {% if event.date.id == day.id %}
                                                 <div class="st-content">
                                                     <div class="container">
                                                         <div class="row">
@@ -239,9 +239,9 @@
                                         {% endfor %}
                                     </div>
                                 {% else %}
-                                    <div class="tab-pane" id="tabs-{{ journey.id }}" role="tabpanel">
+                                    <div class="tab-pane" id="tabs-{{ day.id }}" role="tabpanel">
                                         {% for event in events %}
-                                            {% if event.date.id == journey.id %}
+                                            {% if event.date.id == day.id %}
                                                 <div class="st-content">
                                                     <div class="container">
                                                         <div class="row">

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Edition, Event, Journey, Partner, Slider, Speaker
+from .models import Edition, Event, Day, Partner, Slider, Speaker
 
 
 class EventAdmin(admin.ModelAdmin):
@@ -8,7 +8,7 @@ class EventAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Edition)
-admin.site.register(Journey)
+admin.site.register(Day)
 admin.site.register(Speaker)
 admin.site.register(Event, EventAdmin)
 admin.site.register(Partner)
