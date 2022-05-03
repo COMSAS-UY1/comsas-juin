@@ -1,23 +1,9 @@
-
 {% extends 'core/base.html' %}
-
+{% load i18n %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="zxx">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="keywords" content="Comsas, uy1, Juin, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-</head>
-
-<body>
-
 {% block body %}
-
+<body>
 <!-- **********************slide***************************-->
     {% include 'core/includes/slide.html' %}
     <!-- Counter Section Begin -->
@@ -26,8 +12,8 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="counter-text">
-                        <span>Comptez à rebour avec nous chaque secondes<br />jusqu'a l'evenement</span>
-                        <h3 class="fw-bold">les J.U. IN débutent dans</h3>
+                        <span>{% blocktrans %}Comptez à rebour avec nous chaque secondes<br />jusqu'a l'evenement{% endblocktrans %}</span>
+                        <h3 class="fw-bold">{% trans "les J.U. IN débutent dans" %}</h3>
                     </div>
                 </div>
                 <div class="col-lg-8">
@@ -63,28 +49,66 @@
             </div>
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="ha-pic">
-                        <img src = "{% static 'core/img/s2.jpg' %}">
+                    <div class="ha-pic pt-0">
+                        <img src = "{% static 'core/img/s2.jpg' %}" class="welcome_img">
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="ha-text">
-                        <h2>Bienvenue à la 4éme édition des J.U.IN</h2>
+                    <div class="ha-text pt-5">
+                        <h2>Bienvenue à la 17 <sup>ème</sup> édition des J.U.IN</h2> <h4>Sous le thème :</h4>
+                        <h3 class="fw-bold"> Santé numérique face aux pandémies : Covid 19 et Choléra</h3>
                         <p> Les J.U.IN (<span class="initiales">J</span>ournées <span class="initiales">U</span>niversitaires de l'<span class="initiales">IN</span>formatiques) sont un ensemble d'activités organisées par le COM.S.A.S de l'Université de Yaoundé I avec pour objectif de faire valoir le potentiel des étudiants de la filière informatique.
                         <br>En conviant non seulement tous les etudiants de l'université mais aussi divers entreprises et investisseurs, le but est de faire découvrir au grand public les attouts que possèdent les étudiants de la dite filière. </p>
-                        <a href="#" class="primary-btn top-btn">En Savoir davantage</a>
+                        <a href="{% url 'core:about' %}" class="primary-btn text-white top-btn solution pt-4" style="text-decoration: none;">En savoir davantage</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- Home About Section End -->
+
+
+
+<div class="col-lg-12">
+    <div class="section-title">
+    <h2>Nos Chifres</h2>
+    <p>Notre description par des chifres</p>
+    </div>
+</div>
+</div>
+<div id="projectFacts" class="sectionClass">
+    <div class="fullWidth eight columns">
+        <div class="projectFactsWrap ">
+            <div class="item wow fadeInUpBig animated animated" data-number="12" style="visibility: visible;">
+                <i class="fa fa-tasks"></i>
+                <p id="number1" class="number pt-3">20</p>
+                <p>Projets réalisés</p>
+            </div>
+            <div class="item wow fadeInUpBig animated animated" data-number="55" style="visibility: visible;">
+                <i class="fa fa-user"></i>
+                <p id="number2" class="number pt-3">1500</p>
+                <p>Etudiants attendus</p>
+            </div>
+            <div class="item wow fadeInUpBig animated animated" data-number="359" style="visibility: visible;">
+                <i class="fa fa-building"></i>
+                <p id="number3" class="number pt-3">50</p>
+                <p>Entreprises invitées</p>
+            </div>
+            <div class="item wow fadeInUpBig animated animated" data-number="246" style="visibility: visible;">
+                <i class="fa fa-calendar"></i>
+                <p id="number4" class="number pt-3">05</p>
+                <p>Jours</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
 <div class="card-group container mb-5">
                 <div class="col-lg-12">
                     <div class="section-title">
                         <h2>Découvrez</h2>
-                        <p>Découvrez les grandes lignes de notre foire</p>
+                        <p>Découvrez les grands axes</p>
                     </div>
                 </div>
   <div class="card cardOut m-1">
@@ -141,260 +165,101 @@
                 <div class="col-lg-12">
                     <div class="schedule-tab">
                         <ul class="nav nav-tabs" role="tablist">
-                            {% if day_1 %}
-                                <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
-                                        <h5> Jour 1</h5>
-                                        <p>{{ day_1.first.date | date:'d-m-Y' }}</p>
-                                    </a>
-                                </li>
-                            {% endif %}
-                            {% if day_2 %}
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
-                                        <h5> Jour 2</h5>
-                                        <p>{{ day_2.first.date | date:'d-m-Y' }}</p>
-                                    </a>
-                                </li>
-                            {% endif %}
-                            {% if day_3 %}
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
-                                        <h5> Jour 3</h5>
-                                        <p>{{ day_3.first.date | date:'d-m-Y' }}</p>
-                                    </a>
-                                </li>
-                            {% endif %}
-                            {% if day_4 %}
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">
-                                        <h5> Jour 4</h5>
-                                        <p>{{ day_4.first.date | date:'d-m-Y' }}</p>
-                                    </a>
-                                </li>
-                            {% endif %}
-                            {% if day_5 %}
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#tabs-5" role="tab">
-                                        <h5> Jour 5</h5>
-                                        <p>{{ day_5.first.date | date:'d-m-Y' }}</p>
-                                    </a>
-                                </li>
-                            {% endif %}
-                            {% if day_6 %}
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#tabs-6" role="tab">
-                                        <h5> Jour 6</h5>
-                                        <p>{{ day_6.first.date | date:'d-m-Y' }}</p>
-                                    </a>
-                                </li>
-                            {% endif %}
+                            {% for journey in journeys %}
+                                {% if  journey.is_the_first_date %}
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-toggle="tab" href="#tabs-{{ forloop.counter}}" role="tab">
+                                            <h5> Jour {{ forloop.counter }}</h5>
+                                            <p>{{ journey.date | date:'d-m-Y' }}</p>
+                                        </a>
+                                    </li>
+                                {% else %}
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#tabs-{{ forloop.counter }}" role="tab">
+                                            <h5> Jour {{ forloop.counter }}</h5>
+                                            <p>{{ journey.date | date:'d-m-Y' }}</p>
+                                        </a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                            
+                            
                         </ul><!-- Tab panes -->
                         <div class="tab-content">
-                            <div class="tab-pane active" id="tabs-1" role="tabpanel">
-                                {% for event in day_1 %}
-                                    <div class="st-content">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-lg-3">
-                                                    <div class="sc-pic">
-                                                        <img src = "{{ event.flyers }}">
+                            {% for journey in journeys %}
+                                {% if journey.is_the_first_date %}
+                                    <div class="tab-pane active" id="tabs-{{ forloop.counter }}" role="tabpanel">
+                                        {% for event in journey.get_event %}
+                                                <div class="st-content">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-lg-3">
+                                                                <div class="sc-pic">
+                                                                    <img src = "{{ event.flyers }}">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-5">
+                                                                <div class="sc-text">
+                                                                    <h4>{{ event.title }}</h4>
+                                                                    <ul>
+                                                                        <li><i class="fa fa-user"></i> {% for elt in event.get_speaker %}{{elt.speaker.full_name}}{% endfor %}</li>
+                                                                        <li><i class="fa fa-envelope"></i>
+                                                                            {% for elt in event.get_speaker %} {{ event.get_speaker.speaker.email }} {% endfor %}
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4">
+                                                                <ul class="sc-widget">
+                                                                    <li><i class="fa fa-clock-o"></i> {{ event.start_time | time:'H:i' }} - {{ event.end_time | time:'H:i' }}</li>
+                                                                    <li><i class="fa fa-map-marker"></i>
+                                                                        {{ event.location }}
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-5">
-                                                    <div class="sc-text">
-                                                        <h4>{{ event.title }}</h4>
-                                                        <ul>
-                                                            <li><i class="fa fa-user"></i> {{ event.directed_by.full_name }}</li>
-                                                            <li><i class="fa fa-envelope"></i>
-                                                                {{ event.directed_by.email }}
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4">
-                                                    <ul class="sc-widget">
-                                                        <li><i class="fa fa-clock-o"></i> {{ event.start_time | time:'H:i' }} - {{ event.end_time | time:'H:i' }}</li>
-                                                        <li><i class="fa fa-map-marker"></i>
-                                                            {{ event.location }}
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        {% endfor %}
                                     </div>
-                                {% endfor %}
-                            </div>
-                            <div class="tab-pane" id="tabs-2" role="tabpanel">
-                                {% for event in day_2 %}
-                                    <div class="st-content">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-lg-3">
-                                                    <div class="sc-pic">
-                                                        <img src = "{{ event.flyers }}">
+                                {% else %}
+                                    <div class="tab-pane" id="tabs-{{ forloop.counter }}" role="tabpanel">
+                                        {% for event in journey.get_event %}
+                                                <div class="st-content">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-lg-3">
+                                                                <div class="sc-pic">
+                                                                    <img src = "{{ event.flyers }}">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-5">
+                                                                <div class="sc-text">
+                                                                    <h4>{{ event.title }}</h4>
+                                                                    <ul>
+                                                                        <li><i class="fa fa-user"></i> {% for elt in event.get_speaker %}{{elt.speaker.full_name}} - {% endfor %}</li>
+                                                                        <li><i class="fa fa-envelope"></i>
+                                                                            {% for elt in event.get_speaker %} {{ event.get_speaker.speaker.email }} {% endfor %}
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4">
+                                                                <ul class="sc-widget">
+                                                                    <li><i class="fa fa-clock-o"></i> {{ event.start_time | time:'H:i' }} - {{ event.end_time | time:'H:i' }}</li>
+                                                                    <li><i class="fa fa-map-marker"></i>
+                                                                        {{ event.location }}
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-5">
-                                                    <div class="sc-text">
-                                                        <h4>{{ event.title }}</h4>
-                                                        <ul>
-                                                            <li><i class="fa fa-user"></i> {{ event.directed_by.full_name }}</li>
-                                                            <li><i class="fa fa-envelope"></i>
-                                                                {{ event.directed_by.email }}
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4">
-                                                    <ul class="sc-widget">
-                                                        <li><i class="fa fa-clock-o"></i> {{ event.start_time | time:'H:i' }} - {{ event.end_time | time:'H:i' }}</li>
-                                                        <li><i class="fa fa-map-marker"></i>
-                                                            {{ event.location }}
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        {% endfor %}
                                     </div>
-                                {% endfor %}
-                            </div>
-                            <div class="tab-pane" id="tabs-3" role="tabpanel">
-                                {% for event in day_3 %}
-                                    <div class="st-content">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-lg-3">
-                                                    <div class="sc-pic">
-                                                        <img src = "{{ event.flyers }}">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-5">
-                                                    <div class="sc-text">
-                                                        <h4>{{ event.title }}</h4>
-                                                        <ul>
-                                                            <li><i class="fa fa-user"></i> {{ event.directed_by.full_name }}</li>
-                                                            <li><i class="fa fa-envelope"></i>
-                                                                {{ event.directed_by.email }}
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4">
-                                                    <ul class="sc-widget">
-                                                        <li><i class="fa fa-clock-o"></i> {{ event.start_time | time:'H:i' }} - {{ event.end_time | time:'H:i' }}</li>
-                                                        <li><i class="fa fa-map-marker"></i>
-                                                            {{ event.location }}
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                {% endfor %}
-                            </div>
-                            <div class="tab-pane" id="tabs-4" role="tabpanel">
-                                {% for event in day_4 %}
-                                    <div class="st-content">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-lg-3">
-                                                    <div class="sc-pic">
-                                                        <img src = "{{ event.flyers }}">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-5">
-                                                    <div class="sc-text">
-                                                        <h4>{{ event.title }}</h4>
-                                                        <ul>
-                                                            <li><i class="fa fa-user"></i> {{ event.directed_by.full_name }}</li>
-                                                            <li><i class="fa fa-envelope"></i>
-                                                                {{ event.directed_by.email }}
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4">
-                                                    <ul class="sc-widget">
-                                                        <li><i class="fa fa-clock-o"></i> {{ event.start_time | time:'H:i' }} - {{ event.end_time | time:'H:i' }}</li>
-                                                        <li><i class="fa fa-map-marker"></i>
-                                                            {{ event.location }}
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                {% endfor %}
-                            </div>
-                            <div class="tab-pane" id="tabs-5" role="tabpanel">
-                                {% for event in day_5 %}
-                                    <div class="st-content">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-lg-3">
-                                                    <div class="sc-pic">
-                                                        <img src = "{{ event.flyers }}">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-5">
-                                                    <div class="sc-text">
-                                                        <h4>{{ event.title }}</h4>
-                                                        <ul>
-                                                            <li><i class="fa fa-user"></i> {{ event.directed_by.full_name }}</li>
-                                                            <li><i class="fa fa-envelope"></i>
-                                                                {{ event.directed_by.email }}
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4">
-                                                    <ul class="sc-widget">
-                                                        <li><i class="fa fa-clock-o"></i> {{ event.start_time | time:'H:i' }} - {{ event.end_time | time:'H:i' }}</li>
-                                                        <li><i class="fa fa-map-marker"></i>
-                                                            {{ event.location }}
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                {% endfor %}
-                            </div>
-                            <div class="tab-pane" id="tabs-6" role="tabpanel">
-                                {% for event in day_6 %}
-                                    <div class="st-content">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-lg-3">
-                                                    <div class="sc-pic">
-                                                        <img src = "{{ event.flyers }}">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-5">
-                                                    <div class="sc-text">
-                                                        <h4>{{ event.title }}</h4>
-                                                        <ul>
-                                                            <li><i class="fa fa-user"></i> {{ event.directed_by.full_name }}</li>
-                                                            <li><i class="fa fa-envelope"></i>
-                                                                {{ event.directed_by.email }}
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4">
-                                                    <ul class="sc-widget">
-                                                        <li><i class="fa fa-clock-o"></i> {{ event.start_time | time:'H:i' }} - {{ event.end_time | time:'H:i' }}</li>
-                                                        <li><i class="fa fa-map-marker"></i>
-                                                            {{ event.location }}
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                {% endfor %}
-                            </div>
+                                {% endif %}
+                            
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -403,11 +268,37 @@
     </section>
     <!-- Schedule Section End -->
 
-
-    <div class="mb-5">{% include 'core/includes/commite.html' %}</div>
+    <!-- Team Member Section Begin -->
+    <section class="team-member-section mb-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Commité D'organisation</h2>
+                        <p>Nous l'avons réalisé</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% for organizer in  organizers %}
+            <div class="member-item set-bg" data-setbg="{{organizer.profile.url}}">
+                <div class="mi-social">
+                    <div class="mi-social-inner bg-gradient">
+                        <a href="{{organizer.facebook}}"><i class="fa fa-facebook"></i></a>
+                        <a href="{{organizer.twitter}}"><i class="fa fa-twitter"></i></a>
+                        <a href="{{organizer.linkedin}}"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="mi-text">
+                    <h5>{{organizer.full_name|title}}</h5>
+                    <span>{{organizer.post|title}}</span>
+                </div>
+            </div>
+        {% endfor %}
+        
+    </section>
+    <!-- Team Member Section End -->
     {% comment %} <div>{% include 'core/includes/location.html' %}</div> {% endcomment %}
     
-{% endblock %}
 </body>
-
-</html>
+{% endblock %}

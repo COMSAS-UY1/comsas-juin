@@ -14,8 +14,8 @@
                     <div class="breadcrumb-text">
                         <h2>Intervenants attendues</h2>
                         <div class="bt-option">
-                            <a href="#">Accueil</a>
-                            <span>intervenants</span>
+                            <a href="{% url 'core:home' %}">Accueil</a>
+                            <span>Intervenants</span>
                         </div>
                     </div>
                 </div>
@@ -28,118 +28,34 @@
     <section class="speaker-section spad pt-5">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">
-                    <div class="speaker-item">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="si-pic">
-                                    <img src = "{% static 'core/img/speakers/speaker-3.jpg' %}">
+                {% for speaker in speakers %}
+                    <div class="col-sm-6">
+                        <div class="speaker-item">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="si-pic">
+                                        <img src = "{{speaker.profile.url}}">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="si-text">
-                                    <div class="si-title">
-                                        <h4>Jayden Gill</h4>
-                                        <span>Speaker</span>
+                                <div class="col-lg-6">
+                                    <div class="si-text">
+                                        <div class="si-title">
+                                            <h4>{{speaker.full_name|title}}</h4>
+                                            <span>Speaker</span>
+                                        </div>
+                                        <div class="si-social">
+                                            <a href="{{speaker.facebook}}"><i class="fa fa-facebook"></i></a>
+                                            <a href="{{speaker.twitter}}"><i class="fa fa-twitter"></i></a>
+                                            <a href="{{speaker.linkdin}}"><i class="fa fa-linkdin"></i></a>
+                                        </div>
+                                        <p>{{speaker.about|safe}}</p>
                                     </div>
-                                    <div class="si-social">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                    </div>
-                                    <p>Businesses often become known today through effective marketing. The marketing
-                                        may be in the form of a regular news item or half column society news in the
-                                        Sunday newspaper.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="speaker-item">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="si-pic">
-                                    <img src = "{% static 'core/img/speakers/speaker-2.jpg' %}">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="si-text">
-                                    <div class="si-title">
-                                        <h4>Mary Jane</h4>
-                                        <span>Speaker</span>
-                                    </div>
-                                    <div class="si-social">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                    </div>
-                                    <p>Businesses often become known today through effective marketing. The marketing
-                                        may be in the form of a regular news item or half column society news in the
-                                        Sunday newspaper.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="speaker-item">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="si-pic">
-                                    <img src = "{% static 'core/img/speakers/speaker-5.jpg' %}">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="si-text">
-                                    <div class="si-title">
-                                        <h4>Emma Sandoval </h4>
-                                        <span>CEO</span>
-                                    </div>
-                                    <div class="si-social">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                    </div>
-                                    <p>Businesses often become known today through effective marketing. The marketing
-                                        may be in the form of a regular news item or half column society news in the
-                                        Sunday newspaper.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="speaker-item">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="si-pic">
-                                    <img src = "{% static 'core/img/speakers/speaker-6.jpg' %}">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="si-text">
-                                    <div class="si-title">
-                                        <h4>Harriet Freeman</h4>
-                                        <span>Marketing Manager</span>
-                                    </div>
-                                    <div class="si-social">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                    </div>
-                                    <p>Businesses often become known today through effective marketing. The marketing
-                                        may be in the form of a regular news item or half column society news in the
-                                        Sunday newspaper.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="load-more">
-                <a href="#" class="primary-btn">Load More</a>
-            </div>
+                {% endfor %}
+                
         </div>
     </section>
     <!-- Speaker Section End -->

@@ -1,44 +1,52 @@
-from datetime import datetime
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.views.generic import TemplateView, View
-from .models import Event, Partner, Slider, Speaker
+from .models import Edition, Event, Journey, Partner, Slider, Person
 
 
-class ScheduleView(TemplateView):
+class ScheduleView(View):
     template_name = "core/schedule.html"
+
+    def get(self, request, *args, **kwargs):
+        # Journeys context data
+        journeys = Journey.objects.all().order_by("date")
+        return render(
+            request,
+            self.template_name,
+            context={
+                "journeys": journeys,
+            },
+        )
 
 
 class IndexView(View):
-    template_name = 'core/index.html'
+    template_name = "core/index.html"
 
     def get(self, request, *args, **kwargs):
+        # get curret edition
+        current_edition = get_object_or_404(Edition, status="active")
         # Speakers context data
-        speakers = Speaker.objects.all()
-
-        # Programs/Events context data
-        day_1 = Event.objects.all().filter(date=datetime(2022, 6, 6))
-        day_2 = Event.objects.all().filter(date=datetime(2022, 6, 7))
-        day_3 = Event.objects.all().filter(date=datetime(2022, 6, 8))
-        day_4 = Event.objects.all().filter(date=datetime(2022, 6, 9))
-        day_5 = Event.objects.all().filter(date=datetime(2022, 6, 10))
-        day_6 = Event.objects.all().filter(date=datetime(2022, 6, 11))
+        speakers = current_edition.persons.filter(role="Speaker")
+        print(speakers)
+        # Journeys context data
+        journeys = Journey.objects.all().order_by("date")
+        # Events context data
+        events = current_edition.events.all().order_by("start_time")
         # Sliders context data
         sliders = Slider.objects.all()
         # Partners context data
-        partners = Partner.objects.all()
-        return render(request,
-                      self.template_name,
-                      context={
-                          'speakers': speakers,
-                          'day_1': day_1,
-                          'day_2': day_2,
-                          'day_3': day_3,
-                          'day_4': day_4,
-                          'day_5': day_5,
-                          'day_6': day_6,
-                          'sliders': sliders,
-                          'partners': partners,
-                      })
+        partners = current_edition.partners.all()
+        return render(
+            request,
+            self.template_name,
+            context={
+                "speakers": speakers,
+                "journeys": journeys,
+                "events": events,
+                "sliders": sliders,
+                "partners": partners,
+                "organizers": current_edition.persons.filter(role="Organizer"),
+            },
+        )
 
 
 class AboutView(TemplateView):
@@ -49,19 +57,29 @@ class SpeakerView(View):
     template_name = "core/speaker.html"
 
     def get(self, request, *args, **kwargs):
+        # get curret edition
+        current_edition = get_object_or_404(Edition, status="active")
         # Speakers context data
-        speakers = Speaker.objects.all()
+        speakers = current_edition.persons.filter(role="Speaker")
+        # Journeys context data
+        journeys = Journey.objects.all().order_by("date")
+        return render(
+            request,
+            self.template_name,
+            context={
+                "speakers": speakers,
+                "journeys": journeys,
+            },
+        )
 
-        return render(request,
-                      self.template_name,
-                      context={
-                          'speakers': speakers,
-                      })
 
-
-class ContactView(View):
+class ContactView(TemplateView):
     template_name = "core/contact.html"
 
 
 class SolutionChallengeView(TemplateView):
     template_name = "core/solution.html"
+
+
+class TimeLineView(TemplateView):
+    template_name = "core/time-line.html"
