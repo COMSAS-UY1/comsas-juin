@@ -47,7 +47,7 @@
             <div class="logo">
                 <a href="./index.html">
 
-                    <img src = "{% static 'core/img/logos/logo.png' %}" alt="" width="75px" height="75px">
+                    <img src = "{% static 'core/img/logos/logo.png' %}" alt="" width="180px" height="80px" style="margin-top:12px;">
 
                 </a>
             </div>
@@ -69,7 +69,7 @@
                     </ul>
                 </nav>
 
-                <a href="#" class="primary-btn top-btn solution pt-4" style="text-decoration: none;">Solution Challenge</a>
+                <a href="{% url 'core:solution-challenge' %}" class="primary-btn top-btn solution pt-4" style="text-decoration: none;">Solution Challenge</a>
 
             </div>
             <div id="mobile-menu-wrap"></div>
@@ -87,26 +87,9 @@
 
 
 {% block footer %}
-    <!-- Newslatter Section Begin -->
-    <section class="newslatter-section about-newslatter mb-4 mt-4">
-        <div class="container">
-            <div class="newslatter-inner set-bg" data-setbg= "{% static 'core/img/newslatter-bg.jpg' %}">
-                <div class="ni-text">
-                    <h3>Subscribe Newsletter</h3>
-                    <p>Subscribe to our newsletter and don’t miss anything</p>
-                </div>
-                <form action="#" class="ni-form">
-                    <input type="text" placeholder="Your email">
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-        </div>
-    </section>
-    <!-- Newslatter Section End -->
-
 
     {% block localisation %}
-            <!-- Contact Section Begin -->
+     <!-- Contact Section Begin -->
     <section class="contact-section spad pt-2">
         <div class="container">
             <div class="row">
@@ -117,22 +100,22 @@
                     </div>
                     <div class="cs-text">
                         <div class="ct-address">
-                            <span>Address:</span>
-                            <p>Près de l'Amphi 502 de l'université de Yaoundé 1<br />Cameroun</p>
+                            <span>Adresse:</span>
+                            <p>A l'esplanade du departement informatique.<br /></p>
                         </div>
                         <ul>
                             <li>
-                                <span>Phone:</span>
+                                <span>Téléhone:</span>
                                 (+227) 693-184-269
                             </li>
                             <li>
                                 <span>Email:</span>
-                                info.comsasjuin2022@gmail.com
+                                comsas@facsciences-uy1.cm
                             </li>
                         </ul>
                         <div class="ct-links">
                             <span>Website:</span>
-                            <p>https://comsas.juin2022.com</p>
+                            <p>https://comsas.club</p>
                         </div>
                     </div>
                 </div>
@@ -148,10 +131,8 @@
     </section>
     <!-- Contact Section End -->
     {% endblock %}
-
-    <footer class="footer-section">
-        <div class="container">
-            <div class="partner-logo owl-carousel">
+    <div class="logos bg-dark pt-5">
+        <div class="partner-logo owl-carousel container">
                 <a href="#" class="pl-table">
                     <div class="pl-tablecell">
                         <img src = "{% static 'core/img/partner-logo/logo-1.png' %}" alt="">
@@ -183,6 +164,9 @@
                     </div>
                 </a>
             </div>
+    </div>
+    <footer class="footer-section pt-0">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="footer-text">
@@ -203,7 +187,7 @@
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
                             <a href="#"><i class="fa fa-linkedin"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-github"></i></a>
                             <a href="#"><i class="fa fa-youtube-play"></i></a>
                         </div>
                     </div>
