@@ -1,7 +1,7 @@
 from datetime import datetime
 from django.shortcuts import render
 from django.views.generic import TemplateView, View
-from .models import Event, Partner, Slider, Speaker
+from .models import Event, Journey, Partner, Slider, Speaker
 
 
 class ScheduleView(TemplateView):
@@ -9,36 +9,30 @@ class ScheduleView(TemplateView):
 
 
 class IndexView(View):
-    template_name = 'core/index.html'
+    template_name = "core/index.html"
 
     def get(self, request, *args, **kwargs):
         # Speakers context data
         speakers = Speaker.objects.all()
-
-        # Programs/Events context data
-        day_1 = Event.objects.all().filter(date=datetime(2022, 6, 6))
-        day_2 = Event.objects.all().filter(date=datetime(2022, 6, 7))
-        day_3 = Event.objects.all().filter(date=datetime(2022, 6, 8))
-        day_4 = Event.objects.all().filter(date=datetime(2022, 6, 9))
-        day_5 = Event.objects.all().filter(date=datetime(2022, 6, 10))
-        day_6 = Event.objects.all().filter(date=datetime(2022, 6, 11))
+        # Journeys context data
+        journeys = Journey.objects.all().order_by("date")
+        # Events context data
+        events = Event.objects.all().order_by("start_time")
         # Sliders context data
         sliders = Slider.objects.all()
         # Partners context data
         partners = Partner.objects.all()
-        return render(request,
-                      self.template_name,
-                      context={
-                          'speakers': speakers,
-                          'day_1': day_1,
-                          'day_2': day_2,
-                          'day_3': day_3,
-                          'day_4': day_4,
-                          'day_5': day_5,
-                          'day_6': day_6,
-                          'sliders': sliders,
-                          'partners': partners,
-                      })
+        return render(
+            request,
+            self.template_name,
+            context={
+                "speakers": speakers,
+                "journeys": journeys,
+                "events": events,
+                "sliders": sliders,
+                "partners": partners,
+            },
+        )
 
 
 class AboutView(TemplateView):
@@ -52,11 +46,13 @@ class SpeakerView(TemplateView):
         # Speakers context data
         speakers = Speaker.objects.all()
 
-        return render(request,
-                      self.template_name,
-                      context={
-                          'speakers': speakers,
-                      })
+        return render(
+            request,
+            self.template_name,
+            context={
+                "speakers": speakers,
+            },
+        )
 
 
 class ContactView(TemplateView):
@@ -69,3 +65,4 @@ class SolutionChallengeView(TemplateView):
 
 class TimeLineView(TemplateView):
     template_name = "core/time-line.html"
+

@@ -1,13 +1,14 @@
 from django.contrib import admin
-from .models import Edition, Event, Partner, Slider, Speaker
+from .models import Edition, Event, Journey, Partner, Slider, Speaker
 
 
 class EventAdmin(admin.ModelAdmin):
-    list_display = ('title', 'date', 'directed_by')
-    list_filter = ('date', 'directed_by__full_name')
+    list_display = ("title", "date", "directed_by")
+    list_filter = ("date__date", "directed_by__full_name")
 
 
 admin.site.register(Edition)
+admin.site.register(Journey)
 admin.site.register(Speaker)
 admin.site.register(Event, EventAdmin)
 admin.site.register(Partner)
