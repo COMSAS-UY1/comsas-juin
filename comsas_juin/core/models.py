@@ -27,7 +27,7 @@ class Speaker(models.Model):
     email = models.EmailField(null=False, blank=True)
     facebook = models.URLField(null=True, blank=True)
     twitter = models.URLField(null=True, blank=True)
-    linkdin = models.URLField(null=True, blank=True)
+    linkedin = models.URLField(null=True, blank=True)
     website = models.URLField(null=True, blank=True)
     github = models.URLField(null=True, blank=True)
     about = models.TextField()
