@@ -1,0 +1,189 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J.U.IN &middot; Solution Challenge</title>
+
+    <!-- CSS files -->
+    <link rel="stylesheet" href="{% static 'core/css/solution_challenge_css/bootstrap.min.css' %}" type="text/css">
+	<link rel="stylesheet" href="{% static 'core/css/solution_challenge_css/sc.css' %}" type="text/css">
+    
+</head>
+<body>
+    <section id="header">
+        <!-- ========== Start Header and Navbar Section ========== -->
+        <nav class="navbar navbar-expand-md navbar-light bg-transparent ">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src = "{% static 'core/img/logos/logo.png' %}" alt="comsas logo">
+                    &ThickSpace;
+                    <span>Solution Challenge</span>
+                </a>
+                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">J.U.IN <span class="visually-hidden">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Timeline</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    
+    <!-- ========== End Header and Navbar Section ========== -->
+
+    <!-- ========== Start Hero Section ========== -->
+    <div class="hero">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <h2>Solution Challenge</h2>
+                <h5>Edition J.U.IN 2022</h5>
+                <p>
+                    Cette annee le club INFO de l'Universite de Yaounde I innove comme vous 
+                    pouvez le constater par son nom: <b>La Solution Challenge</b>. <br>
+                    Tout au long de cette competition, il sera question pour les etudiants de se 
+                    mettre en equipe de <b>03</b>, toutes filieres confondues, et proposer une 
+                    solution (Une Application ou meme juste un prototype) qui visera a resoudre 
+                    ou faciliter les consultations hospitalieres.
+                </p>
+                <a href="#" class="btn">S'inscrire Maintenant</a>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <img src="{% static 'core/img/challenge.svg' %}" class="img-fluid" alt="challenge image">
+            </div>
+        </div>
+    </div>
+    <!-- ========== End Hero Section ========== -->
+    </section>
+
+    <div class="container">
+
+      <!-- ========== Start Prizes ========== -->
+        <div class="row" id="prizes">
+            <div class="col-12">
+                <div class="section-title">
+                    <h1>Recompenses</h1>
+                    <h2>Awards</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="box-item col-md-4 col-sm-12 col-lg-4">
+                <div class="flip-box">
+                    <div class="flip-box-front">
+                    <div class="inner-fr d-flex align-items-center justify-content-between">
+                        <div class="">
+                        <h3 class="flip-box-header inner-front">1</h3>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="flip-box-back">
+                    <div class="inner-ba">
+                        <h3 class="flip-box-header inner-back"><span>First</span> prize</h3>
+                        <p>
+                            Win a T-shirt, certificate, and mentorship from Googlers and other experts to improve and submit a solution for the top prize.
+                        </p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-item col-md-4 col-sm-12 col-lg-4">
+                <div class="flip-box">
+                    <div class="flip-box-front">
+                    <div class="inner-fr d-flex align-items-center justify-content-between">
+                        <div class="">
+                        <h3 class="flip-box-header inner-front">2</h3>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="flip-box-back">
+                    <div class="inner-ba">
+                        <h3 class="flip-box-header inner-back"><span>Second</span> prize</h3>
+                        <p>
+                            Win a T-shirt, certificate, and mentorship from Googlers and other experts to improve and submit a solution for the top prize.
+                        </p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-item col-md-4 col-sm-12 col-lg-4">
+                <div class="flip-box">
+                    <div class="flip-box-front">
+                    <div class="inner-fr d-flex align-items-center justify-content-between">
+                        <div class="">
+                        <h3 class="flip-box-header inner-front">3</h3>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="flip-box-back">
+                    <div class="inner-ba">
+                        <h3 class="flip-box-header inner-back"><span>Third</span> prize</h3>
+                        <p>
+                            Win a T-shirt, certificate, and mentorship from Googlers and other experts to improve and submit a solution for the top prize.
+                        </p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========== End Prizes ========== -->
+
+        <!-- ========== Start Timeline Intro ========== -->
+        <div class="row" id="timeline">
+            <div class="col-12">
+                <div class="section-title">
+                    <h1>Timeline</h1>
+                    <h2>Instructions</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="timeline-img">
+                    <img src="{% static 'core/img/ehealth.svg' %}" alt="img-fluid">
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="timeline-info mt-5">
+                    <h2>Comment ça se passe ?</h2>
+                    <h5>Get set!</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus alias fugit aliquid perspiciatis voluptatibus! Unde
+                        tenetur porro exercitationem numquam, nisi nam soluta aliquam commodi, quae, voluptate minima. Libero distinctio sit
+                        quos voluptate, corrupti rem voluptates illo eligendi, velit ipsam soluta perspiciatis exercitationem porro. Quia optio
+                        distinctio rerum quidem quos commodi tempore, numquam fuga officia, sunt quo vero eligendi. Rerum asperiores vel
+                        nesciunt eos exercitationem, nulla fuga, delectus odit nostrum quaerat dignissimos maxime nobis libero ipsa! A sit
+                        magnam, optio earum assumenda vitae omnis ipsa ratione molestiae nihil, suscipit enim. Ad adipisci soluta quis,
+                        inventore voluptate eius tempore dolor eligendi consectetur!
+                    </p>
+                    <a href="" class="btn">Read more</a>
+                </div>
+            </div>
+        </div>
+        <!-- ========== End Timeline Intro ========== -->
+    </div>
+
+    <!-- ========== Start Register now ========== -->
+    <div class="row register">
+        <div class="col-12">
+            <h1>Inscrivez-vous maintenant !</h1>
+        </div>
+        <div class="col-12 mt-3">
+            <a href="" class="btn register-btn">S'inscrire</a>
+        </div>
+    </div>
+    <!-- ========== End Register now ========== -->
+</body>
+</html>
