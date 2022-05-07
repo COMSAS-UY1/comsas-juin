@@ -18,7 +18,7 @@
         <!-- ========== Start Header and Navbar Section ========== -->
         <nav class="navbar navbar-expand-md navbar-light bg-transparent ">
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="{% url 'core:home' %">
                     <img src = "{% static 'core/img/logos/logo.png' %}" alt="comsas logo">
                     &ThickSpace;
                     <span>Solution Challenge</span>
@@ -30,10 +30,10 @@
                 <div class="collapse navbar-collapse" id="collapsibleNavId">
                     <ul class="navbar-nav me-auto mt-2 mt-lg-0">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">J.U.IN <span class="visually-hidden">(current)</span></a>
+                            <a class="nav-link" href="{% url 'core:home' %}">J.U.IN <span class="visually-hidden">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Timeline</a>
+                            <a class="nav-link" href="#timeline">Timeline</a>
                         </li>
                     </ul>
                 </div>
@@ -46,17 +46,16 @@
     <div class="hero">
         <div class="row">
             <div class="col-sm-12 col-md-6 col-lg-6">
-                <h2>Solution Challenge</h2>
-                <h5>Edition J.U.IN 2022</h5>
+                <h2>JUIN Solution Challenge</h2>
+                <h5>Edition 2022</h5>
                 <p>
-                    Cette annee le club INFO de l'Universite de Yaounde I innove comme vous 
-                    pouvez le constater par son nom: <b>La Solution Challenge</b>. <br>
-                    Tout au long de cette competition, il sera question pour les etudiants de se 
-                    mettre en equipe de <b>03</b>, toutes filieres confondues, et proposer une 
-                    solution (Une Application ou meme juste un prototype) qui visera a resoudre 
-                    ou faciliter les consultations hospitalieres.
+                    <p class="container fs-5">
+                        L'objectif du <span class="fw-bold"> JUIN Solution Challenge</span> est de proposer 
+                        une solution informatique qui résout le problème de consultation hospitalière au Cameroun.
+                   </p>
+                   <p class="container fs-5">La solution challenge est ouverte à tout étudiants désireux participer
                 </p>
-                <a href="#" class="btn">S'inscrire Maintenant</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSe3kqWVXKZ9ZwEOeUQDxkjpA7D5gNf5OMO05wA1OPIravD3bQ/viewform" class="btn">S'inscrire Maintenant</a>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-6">
                 <img src="{% static 'core/img/challenge.svg' %}" class="img-fluid" alt="challenge image">
@@ -89,9 +88,11 @@
                     </div>
                     <div class="flip-box-back">
                     <div class="inner-ba">
-                        <h3 class="flip-box-header inner-back"><span>First</span> prize</h3>
+                        <h3 class="flip-box-header inner-back"><span>05 Meilleurs</span> projets</h3>
                         <p>
-                            Win a T-shirt, certificate, and mentorship from Googlers and other experts to improve and submit a solution for the top prize.
+                            Les 05 meilleurs projets auront l'opportunité de presenter leurs realisations lors des JUIN 
+                            devant les diverses entreprises tech qui seront representées.
+                            Il recevront egalement de nombreux lots venant des sponsor et un certificat de participation
                         </p>
                     </div>
                     </div>
@@ -109,9 +110,11 @@
                     </div>
                     <div class="flip-box-back">
                     <div class="inner-ba">
-                        <h3 class="flip-box-header inner-back"><span>Second</span> prize</h3>
+                        <h3 class="flip-box-header inner-back"><span>03 Meilleurs</span> projets</h3>
                         <p>
-                            Win a T-shirt, certificate, and mentorship from Googlers and other experts to improve and submit a solution for the top prize.
+                            Les 03 meilleurs projets, en plus d'avoir l'opportunité de présenter leurs réalisations lors des JUIN
+                            devant les différentes entreprises technologiques qui seront représentées, des prix de la part des sponsors et un certificat de participation;
+                            les meilleurs de l'équipe auront l'opportunité d'obtenir des stages dans les entreprises représentées.
                         </p>
                     </div>
                     </div>
@@ -129,9 +132,10 @@
                     </div>
                     <div class="flip-box-back">
                     <div class="inner-ba">
-                        <h3 class="flip-box-header inner-back"><span>Third</span> prize</h3>
+                        <h3 class="flip-box-header inner-back"><span>Le meilleur</span> projet</h3>
                         <p>
-                            Win a T-shirt, certificate, and mentorship from Googlers and other experts to improve and submit a solution for the top prize.
+                            Le meilleur projet sera récompensé par le département et les membres bénéficieront également d'offres de stage 
+                            dans les entreprises représentées
                         </p>
                     </div>
                     </div>
@@ -157,21 +161,127 @@
             </div>
             <div class="col-sm-12 col-md-6 col-lg-6">
                 <div class="timeline-info mt-5">
-                    <h2>Comment ça se passe ?</h2>
-                    <h5>Get set!</h5>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus alias fugit aliquid perspiciatis voluptatibus! Unde
-                        tenetur porro exercitationem numquam, nisi nam soluta aliquam commodi, quae, voluptate minima. Libero distinctio sit
-                        quos voluptate, corrupti rem voluptates illo eligendi, velit ipsam soluta perspiciatis exercitationem porro. Quia optio
-                        distinctio rerum quidem quos commodi tempore, numquam fuga officia, sunt quo vero eligendi. Rerum asperiores vel
-                        nesciunt eos exercitationem, nulla fuga, delectus odit nostrum quaerat dignissimos maxime nobis libero ipsa! A sit
-                        magnam, optio earum assumenda vitae omnis ipsa ratione molestiae nihil, suscipit enim. Ad adipisci soluta quis,
-                        inventore voluptate eius tempore dolor eligendi consectetur!
+                    <h2>Prêt à commencer ?</h2>
+                    <h5>Chronologie du JUIN Solution Challenge 2022</h5>
+                    <p class="container fs-5">
+                    Voici un aperçu de la chronologie du programme et de la façon de commencer votre voyage avec le Solution Challenge de cette année.
+
                     </p>
-                    <a href="" class="btn">Read more</a>
+                    
                 </div>
             </div>
         </div>
+        <section>
+            <div class="container w-100 row mx-auto d-flex steps">
+              <div class="col step m-1 text-center">
+                <h4 class="pb-1">Step 1</h4>
+          
+                <p class="pt-3">Former une équipe et s'inscrire</p>
+              </div>
+              <div class="col step m-1 text-center">
+                <h4 class="pb-1">Step 2</h4>
+          
+                <p class="pt-1">Identifier une solution</p>
+              </div>
+              <div class="col step m-1 text-center">
+                <h4 class="pb-1">Step 3</h4>
+          
+                <p class="pt-1">Concevoir l'interface utilisateurs</p>
+              </div>
+              <div class="col step m-1 text-center">
+                <h4 class="pb-1">Step 4</h4>
+          
+                <p class="pt-1">Concevoir la logique metier</p>
+              </div>
+            
+              <div class="col step m-1 text-center">
+                <h4 class="pb-1">Step 5</h4>
+          
+                <p class="pt-1">Enregistrez une vidéo de démonstration</p>
+              </div>
+          
+            </div>
+          </section>
+          
+          <section class="mt-5 pt-5">
+            <div class="row w-100 d-flex container-fluid">
+              <div class="col-lg-6">
+                <div class="card mb-3 border-0" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="{% static 'core/img/1.svg' %}" class="card-img-top mt-4 img-fluid" alt="..." style="margin-top: -2.5rem; width: 60px; height: 60px;">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 >Formez une équipe et enregistrez-vous</h5>
+                        <p class="container fs-5">
+                            Formez une équipe de 3 personnes, avec au moins un étudiant de l'université de Yaoundé 1, et idéalement 
+                            avec un ensemble varié de compétences techniques et non techniques. Discutez dès le début des causes
+                             qui vous tiennent le plus à cœur. Inscrivez-vous au Solution Challenge en soumettant ce(uniquement le chef de groupe).
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb-3 border-0" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="{% static 'core/img/2.svg' %}" class="card-img-top mt-4 img-fluid" alt="..." style="margin-top: -2.5rem; width: 60px; height: 60px;">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 >Identifier une solution</h5>
+                        <p class="container fs-5">L'une des façons d'identifier une solution est d'utiliser un<a href="https://designsprintkit.withgoogle.com/methodology/overview">sprint de conception </a>, un cadre flexible pour résoudre des problèmes par la conception, le prototypage et l'essai d'idées avec des utilisateurs au cours d'un sprint de cinq jours. 
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb-3 border-0" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="{% static 'core/img/3.svg' %}" class="card-img-top mt-4 img-fluid" alt="..." style="margin-top: -2.5rem; width: 60px; height: 60px;">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 >Concevoir l'interface utilisateurs </h5>
+                        <p class="container fs-5">C'est là qu'interviennent l'interface utilisateur et l'expérience utilisateur de votre solution. Commencez à réfléchir à la manière dont un utilisateur interagira avec la solution.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb-3 border-0" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="{% static 'core/img/4.svg' %}" class="card-img-top mt-4 img-fluid" alt="..." style="margin-top: -2.5rem; width: 60px; height: 60px;">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 >Concevoir la logique metier</h5>
+                        <p class="container fs-5">
+                            Concevez le backend de votre système, vous êtes libre d'utiliser la technologie de votre choix.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="card mb-3 border-0" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="{% static 'core/img/5.svg' %}" class="card-img-top mt-4 img-fluid" alt="..." style="margin-top: -2.5rem; width: 60px; height: 60px;">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 >Enregistrez une vidéo de démonstration et envoyez-la avant le 04 juin 2022.</h5>
+                        <p class="container fs-5">Mettez votre solution en action. Enregistrez une vidéo d'une démonstration réussie (d'une durée maximale de 2 minutes) et soumettez-la. Le formulaire de soumission vous sera fourni.</div>
+                    </div>
+                  </div>
+          
+                
+                </div>
+                
+              </div>
+            </div>
+          </section>
         <!-- ========== End Timeline Intro ========== -->
     </div>
 
@@ -181,7 +291,7 @@
             <h1>Inscrivez-vous maintenant !</h1>
         </div>
         <div class="col-12 mt-3">
-            <a href="" class="btn register-btn">S'inscrire</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe3kqWVXKZ9ZwEOeUQDxkjpA7D5gNf5OMO05wA1OPIravD3bQ/viewform" class="btn register-btn">S'inscrire</a>
         </div>
     </div>
     <!-- ========== End Register now ========== -->
