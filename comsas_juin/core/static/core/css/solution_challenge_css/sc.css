@@ -125,7 +125,7 @@ section#header{
 
 .hero h2{
     font-family: var(--title-font);
-    font-size: 70pt;
+    font-size: 60pt;
     font-weight: bold;
     background: -webkit-linear-gradient(bottom, rgb(244, 145, 32), rgb(244, 73, 73));
     background-clip: text;
@@ -134,8 +134,7 @@ section#header{
 }
 
 .hero h5{
-    text-decoration: underline wavy;
-    color: #4e4e4e;
+    color: var(--primary-color);
 }
 
 .hero p{
