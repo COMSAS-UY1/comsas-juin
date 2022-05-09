@@ -16,18 +16,15 @@
 <body>
     <section id="header">
         <!-- ========== Start Header and Navbar Section ========== -->
-        <nav class="navbar navbar-expand-md navbar-light bg-transparent ">
+        <nav class="navbar navbar-expand-md navbar-light bg-transparent w-100">
             <div class="container">
                 <a class="navbar-brand" href="{% url 'core:home' %">
                     <img src = "{% static 'core/img/logos/logo.png' %}" alt="comsas logo">
                     &ThickSpace;
-                    <span>Solution Challenge</span>
+                    <span>Solution Challenge</span><br />
+                    <p>Solution Challenge</p>
                 </a>
-                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <div>
                     <ul class="navbar-nav me-auto mt-2 mt-lg-0">
                         <li class="nav-item active">
                             <a class="nav-link" href="{% url 'core:home' %}">J.U.IN <span class="visually-hidden">(current)</span></a>
@@ -160,7 +157,7 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-6">
-                <div class="timeline-info mt-5 pt-5">
+                <div class="timeline-info mt-lg-5 pt-lg-5">
                     <h2>Prêt à commencer ?</h2>
                     <h5>Chronologie du JUIN Solution Challenge 2022</h5>
                     <p class="fs-5">
@@ -171,36 +168,40 @@
                 </div>
             </div>
         </div>
-        <section>
-            <div class="container w-100 row mx-auto d-flex steps">
 
-              <div class="col-sm-6 col-md-4 col-lg-2 mx-auto step m-1 text-center">
+        <!-- ========== Start Steps ========== -->
+        <section>
+            <div class="container ms-md-5 row mx-auto d-flex steps">
+
+              <div class="col-sm-6 col-md-3 col-lg-2 mx-auto step m-1 m-md-3 mx-auto text-center shadow">
                 <h4 class="pb-1 text-muted">Step 1</h4>
                 <h3 class="pt-1">Team Up</h3>
               </div>
 
-              <div class="col-sm-6 col-md-4 col-lg-2 mx-auto step m-1 text-center">
+              <div class="col-sm-6 col-md-3 col-lg-2 mx-auto step m-1 m-md-3 mx-auto text-center shadow">
                 <h4 class="pb-1  text-muted">Step 2</h4>
                 <h3 class="pt-1">Ideate</h3>
               </div>
 
-              <div class="col-sm-6 col-md-4 col-lg-2 mx-auto step m-1 text-center">
+              <div class="col-sm-6 col-md-3 col-lg-2 mx-auto step m-1 m-md-3 mx-auto text-center shadow">
                 <h4 class="pb-1  text-muted">Step 3</h4>
                 <h3 class="pt-1">Design</h3>
               </div>
 
-              <div class="col-sm-6 col-md-4 col-lg-2 mx-auto step m-1 text-center">
+              <div class="col-sm-6 col-md-3 col-lg-2 mx-auto step m-1 m-md-3 mx-auto text-center shadow">
                 <h4 class="pb-1  text-muted">Step 4</h4>
                 <h3 class="pt-1">Code</h3>
               </div>
 
-              <div class="col-sm-6 col-md-4 col-lg-2 mx-auto step m-1 text-center">
+              <div class="col-sm-6 col-md-3 col-lg-2 mx-auto step m-1 m-md-3 mx-auto text-center shadow">
                 <h4 class="pb-1  text-muted">Step 5</h4>
                 <h3 class="pt-1">Present</h3>
               </div>
           
             </div>
           </section>
+
+          <!-- ========== End Steps ========== -->
           
           <section class="mt-5 pt-5">
             <div class="row">
@@ -233,7 +234,7 @@
                     </div>
                     <div class="col-10">
                       <div class="card-body">
-                        <h5>Identifier une solution</h5>
+                        <h5>Identifiez une solution</h5>
                         <p class="container fs-5">
                           L'une des façons d'identifier une solution est d'utiliser un <a href="https://designsprintkit.withgoogle.com/methodology/overview"> 
                           sprint de conception</a>, un cadre flexible pour résoudre des problèmes par la conception, le prototypage et l'essai d'idées avec 
@@ -253,7 +254,7 @@
                     </div>
                     <div class="col-10">
                       <div class="card-body">
-                        <h5>Concevoir l'interface utilisateurs</h5>
+                        <h5>Concevez l'interface utilisateurs</h5>
                         <p class="container fs-5">
                           C'est là qu'interviennent l'interface utilisateur et l'expérience utilisateur de votre solution. Commencez à réfléchir à
                           la manière dont un utilisateur interagira avec la solution.
@@ -272,7 +273,7 @@
                     </div>
                     <div class="col-10">
                       <div class="card-body">
-                        <h5>Concevoir la logique metier</h5>
+                        <h5>Concevez la logique metier</h5>
                         <p class="container fs-5">
                           Concevez le backend de votre système, vous êtes libre d'utiliser la technologie de votre choix.
                         </p>
