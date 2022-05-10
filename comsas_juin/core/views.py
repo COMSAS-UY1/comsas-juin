@@ -60,7 +60,7 @@ class SpeakerView(View):
         # get curret edition
         current_edition = get_object_or_404(Edition, status="active")
         # Speakers context data
-        speakers = current_edition.persons.filter(role="Speaker")
+        speakers = current_edition.persons.filter(role="Speaker").order_by("full_name")
         # Journeys context data
         journeys = Journey.objects.all().order_by("date")
         return render(
@@ -78,7 +78,7 @@ class ContactView(TemplateView):
 
 
 class SolutionChallengeView(TemplateView):
-    template_name = "core/solution.html"
+    template_name = "core/sc.html"
 
 
 class TimeLineView(TemplateView):

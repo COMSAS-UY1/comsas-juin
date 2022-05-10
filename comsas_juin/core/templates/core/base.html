@@ -45,7 +45,7 @@
     <header class="header-section">
         <div class="container">
             <div class="logo">
-                <a href="./index.html">
+                <a href="{% url 'core:home' %}">
 
                     <img src = "{% static 'core/img/logos/logo.png' %}" alt="" width="180px" height="80px" style="margin-top:12px;">
 
@@ -57,10 +57,11 @@
                         <li class="active"><a href="{% url 'core:home' %}">Acceuil</a></li>
                         <li><a href="{% url 'core:speakers' %}">Intervenants</a>
                             <ul class="dropdown">
-                                <li><a href="">Jayden</a></li>
-                                <li><a href="#">Sara</a></li>
-                                <li><a href="#">Emma</a></li>
-                                <li><a href="#">Harriet</a></li>
+                            {% for speakers in speakers %}
+                                <li><a href="{%url 'core:speakers' %}#speaker-{{speaker.full_name}}">{{speaker.full_name}} </a></li>
+                                {% endfor %}
+                                
+                                
                             </ul>
                         </li>
                         <li><a href="{% url 'core:schedule' %}">Programme</a></li>
