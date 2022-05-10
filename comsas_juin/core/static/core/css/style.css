@@ -251,15 +251,6 @@ ol {
     border-bottom: 1px solid #e5e5e5;
 }
 
-.logo {
-    float: left;
-    padding-top: 6px;
-    padding-bottom: 7px;
-}
-
-.logo a {
-    display: inline-block;
-}
 
 .nav-menu {
     float: right;

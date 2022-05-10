@@ -13,7 +13,7 @@ SECRET_KEY = "q4ms+0cu+lhe^wg+dma_#h@ufti4!n&1=xi437u=&rgyg4x9ss"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["juin.comsas.club", "www.juin.comsas.club", "127.0.0.1"]
+ALLOWED_HOSTS = ["juin.comsas.club", "www.juin.comsas.club", "127.0.0.1", "192.168.1.101"]
 
 # Application definition
 
