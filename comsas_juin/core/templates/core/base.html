@@ -142,10 +142,9 @@
     </section>
     <!-- Contact Section End -->
     {% endblock %}
-    <div class="logos bg-dark pt-5">
+    <div class="logos bg pt-5">
         <div class="partner-logo owl-carousel container">
-                {% for patner in partners %}
-
+                {% for partner in partners %}
                 <a href="{{partner.web_site}}" class="pl-table">
                     <div class="pl-tablecell">
                         <img src = "{{partner.logo.url}}" alt="{{partner.name}}">

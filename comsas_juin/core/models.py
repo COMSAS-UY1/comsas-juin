@@ -75,7 +75,7 @@ class Partner(models.Model):
     logo = models.ImageField(upload_to="images/partners/")
     web_site = models.URLField(max_length=200, null=True, blank=True)
     phone_number = models.CharField(max_length=15, null=True, blank=True)
-    description = models.TextField()
+    description = models.TextField(null=True, blank=True)
     edition = models.ForeignKey(Edition, models.CASCADE, related_name="partners")
 
     def __str__(self):
