@@ -55,8 +55,21 @@ class IndexView(View):
         )
 
 
-class AboutView(TemplateView):
+class AboutView(View):
     template_name = "core/about.html"
+
+    def get(self, request, *args, **kwargs):
+        # get curret edition
+        current_edition = get_object_or_404(Edition, status="active")
+        # Speakers context data
+        speakers = current_edition.persons.filter(role="Organizer").order_by("full_name")
+        return render(
+            request,
+            self.template_name,
+            context={
+                "speakers": speakers,
+            },
+        )
 
 
 class SpeakerView(View):
@@ -67,14 +80,11 @@ class SpeakerView(View):
         current_edition = get_object_or_404(Edition, status="active")
         # Speakers context data
         speakers = current_edition.persons.filter(role="Speaker").order_by("full_name")
-        # Journeys context data
-        journeys = Journey.objects.all().order_by("date")
         return render(
             request,
             self.template_name,
             context={
                 "speakers": speakers,
-                "journeys": journeys,
             },
         )
 

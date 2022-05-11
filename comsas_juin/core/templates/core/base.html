@@ -107,7 +107,7 @@
                 <div class="col-lg-6">
                     <div class="section-title">
                         <h2>Localisation</h2>
-                        <p>Les J.U.IN se déroulent où ?</p>
+                        <p>Où se déroule les J.U.IN?</p>
                     </div>
                     <div class="cs-text">
                         <div class="ct-address">
@@ -144,36 +144,15 @@
     {% endblock %}
     <div class="logos bg-dark pt-5">
         <div class="partner-logo owl-carousel container">
-                <a href="#" class="pl-table">
+                {% for patner in partners %}
+
+                <a href="{{partner.web_site}}" class="pl-table">
                     <div class="pl-tablecell">
-                        <img src = "{% static 'core/img/partner-logo/logo-1.png' %}" alt="">
+                        <img src = "{{partner.logo.url}}" alt="{{partner.name}}">
                     </div>
                 </a>
-                <a href="#" class="pl-table">
-                    <div class="pl-tablecell">
-                        <img src = "{% static 'core/img/partner-logo/logo-2.png' %}" alt="">
-                    </div>
-                </a>
-                <a href="#" class="pl-table">
-                    <div class="pl-tablecell">
-                        <img src = "{% static 'core/img/partner-logo/logo-3.png' %}" alt="">
-                    </div>
-                </a>
-                <a href="#" class="pl-table">
-                    <div class="pl-tablecell">
-                        <img src = "{% static 'core/img/partner-logo/logo-4.png' %}" alt="">
-                    </div>
-                </a>
-                <a href="#" class="pl-table">
-                    <div class="pl-tablecell">
-                        <img src = "{% static 'core/img/partner-logo/logo-5.png' %}" alt="">
-                    </div>
-                </a>
-                <a href="#" class="pl-table">
-                    <div class="pl-tablecell">
-                        <img src = "{% static 'core/img/partner-logo/logo-6.png' %}" alt="">
-                    </div>
-                </a>
+                {% endfor %}    
+                
             </div>
     </div>
     <footer class="footer-section pt-0">
@@ -182,7 +161,7 @@
                 <div class="col-lg-12">
                     <div class="footer-text">
                         <div class="ft-logo">
-                            <a href="/" class="footer-logo"><img src = "{% static 'core/img/logos/logo-white.png' %}" alt="" width="80px" height="85px" style="opacity: 0.8;"></a>
+                            <a href="{% url 'core:home' %}" class="footer-logo"><img src = "{% static 'core/img/logos/logo-white.png' %}" alt="" width="80px" height="85px" style="opacity: 0.8;"></a>
                         </div>
                         <ul>
                             <li><a href="{% url 'core:home' %}">Home</a></li>
@@ -195,11 +174,11 @@
   Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Built by <a href="https://comsas.club" target="_blank">COM.S.A.S</a>
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
                         <div class="ft-social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="https://web.facebook.com/Computer-Science-Association-115804577784033/?_rdc=1&_rdr"><i class="fa fa-facebook"></i></a>
+                            <a href="https://twitter.com/ComsasClub"><i class="fa fa-twitter"></i></a>
                             <a href="#"><i class="fa fa-linkedin"></i></a>
-                            <a href="#"><i class="fa fa-github"></i></a>
-                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                            <a href="https://github.com/COMSAS-UY1"><i class="fa fa-github"></i></a>
+                            <a href="https://www.youtube.com/channel/UCSGj39TwmsReLy57_DWt7fw"><i class="fa fa-youtube-play"></i></a>
                         </div>
                     </div>
                 </div>

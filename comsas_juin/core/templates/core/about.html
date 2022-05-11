@@ -30,9 +30,14 @@
             <div class="row ">
                 <div class="col-lg-12">
                     <div class="section-title pt-5 ">
-                        <h2>Qui sommes-nous!?</h2>
-                        <p class="f-para">There are several ways people can make money online. From selling products to advertising. In this article I am going to explain the concept of contextual advertising.</p>
-                        <p>First I will explain what contextual advertising is. Contextual advertising means the advertising of products on a website according to the content the page is displaying. For example if the content of a website was information on a Ford truck then the advertisements would be for Ford trucks for sale, or Ford servicing etc. It picks up the words on the page and displays ads that are similar to those words. Then when someone either performs an action or clicks on your page you will get paid.</p>
+                        <h2>Origine des J.U.IN</h2>
+                        <p class="f-para">L'an 2004 est l'année de naissance des "Journées Universitaires de l'Informatique “, les toutes
+                            premières journées Universitaires de l'Université de Yaoundé I. Son but était de promouvoir les
+                            compétences des étudiants de la filière Informatique de la Faculté des Sciences en mettant en relief non
+                            seulement le savoir-faire mais aussi le savoir-être et le savoir vivre des étudiants tout en soulignant
+                            leurs importance pour les entreprises et le développement du Pays. Fort de sa réussite, la plupart des Clubs
+                            de la Faculté des Sciences de l'Université ont copié en 2005 le bon exemple et aujourd'hui, les Journées
+                            Universitaires constituent pour plusieurs Clubs l'événement majeur de leurs activités.</p>
                     </div>
                 </div>
             </div>
@@ -42,15 +47,15 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="ha-pic">
-                        <img src = "{% static 'core/img/s2.jpg' %}" class="welcome_img">
+                        <img src = "{% static 'core/img/juin.png' %}" class="welcome_img">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="ha-text">
-                        <h2>Bienvenue à la 17 <sup>ème</sup> édition des J.U.IN</h2>
+                        <h2>La 17 <sup>ème</sup> édition des J.U.IN</h2>
                         <p> Les J.U.IN (<span class="initiales">J</span>ournées <span class="initiales">U</span>niversitaires de l'<span class="initiales">IN</span>formatiques) sont un ensemble d'activités organisées par le COM.S.A.S de l'Université de Yaoundé I avec pour objectif de faire valoir le potentiel des étudiants de la filière informatique.
-                        <br>En conviant non seulement tous les etudiants de l'université mais aussi divers entreprises et investisseurs, le but est de faire découvrir au grand public les attouts que possèdent les étudiants de la dite filière. </p>
-                        <a href="{% url 'core:about' %}" class="primary-btn text-white top-btn solution pt-4" style="text-decoration: none;">En savoir davantage</a>
+                        <br>En conviant non seulement tous les etudiants de l'université mais aussi divers entreprises et investisseurs, le but est de faire découvrir au grand public les attouts que possèdent les étudiants de la dite filière. 
+                        Les J.U.IN nous reviennent  apres trois ans d'absence dû à la crise sanitaire  pour une nouvelle édition axée principalement sur la santé, ses défis et les opportunités qu'offre l’informatique dans le domaine de la santé.</p>
                     </div>
                 </div>
             </div>
@@ -62,7 +67,7 @@
     <!-- About Section End -->
 
 
-    <!-- Story Section Begin -->
+    <!-- Story Section Begin 
     <section class="story-section spad">
         <div class="container">
             <div class="row">
@@ -76,9 +81,9 @@
                 <div class="col-lg-6">
                     <div class="story-left">
                         <div class="story-item">
-                            <h2>2008</h2>
+                            <h2>2019</h2>
                             <div class="si-text">
-                                <h4>Adwords Keyword Research For Beginners</h4>
+                                <h4>16ème edition des J.U.IN </h4>
                                 <p>However this is also the most expensive position. Give it a try if the second to fourth display position gives you more visitors and more customers for less money.</p>
                             </div>
                         </div>
@@ -114,7 +119,7 @@
     </section>
     <!-- Story Section End -->
 
-    <!-- Testimonial Section Begin -->
+    <!-- Testimonial Section Begin 
     <section class="testimonial-section spad pt-0">
         <div class="container pt-0">
             <div class="row pt-0">
@@ -185,55 +190,38 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
     <!-- Testimonial Section End -->
 
-<section class="mb-3">
-<div class="card-group container mb-5">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h1 class="text-dark">Commités D'organisation</h1>
-                        <h2>Nous l'avons conçu</h2>
-                    </div>
+ <!-- Team Member Section Begin -->
+ <section class="team-member-section mb-5 pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <h2>Équipes de développeurs</h2>
+                    <p>Ils ont rendu ce  site disponible..</p>
                 </div>
-  <div class="card cardOut m-1">
-    <div class="cardIn">
-    <img src="{% static 'core/img/c.jpg' %}" class="card-img-top" alt="..." style="height: auto;">
-    <div class="card-body">
-      <h2 class="card-title">Tech talk</h2>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+        </div>
     </div>
+    {% for organizer in organizers %}
+    <div class="member-item set-bg" data-setbg="{{organizer.profile.url}}">
+        <div class="mi-social">
+            <div class="mi-social-inner bg-gradient">
+                <a href="{{organizer.facebook}}"><i class="fa fa-facebook"></i></a>
+                <a href="{{organizer.twitter}}"><i class="fa fa-twitter"></i></a>
+                <a href="{{organizer.linkedin}}"><i class="fa fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="mi-text">
+            <h5>{{organizer.full_name|title}}</h5>
+            <span>{{organizer.post|title}}</span>
+        </div>
     </div>
-  </div>
-  <div class="card cardOut m-1">
-    <div class="cardIn">
-    <img src="{% static 'core/img/tg.webp' %}" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h2 class="card-title">Jeux</h2>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-    </div>
-    </div>
-  </div>
-  <div class="card cardOut m-1">
-    <div class="cardIn">
-    <img src="{% static 'core/img/s.jpeg' %}" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h2 class="card-title">Tours des partenaires</h2>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      </div>
-    </div>
-  </div>
-  <div class="card cardOut m-1">
-    <div class="cardIn">
-    <img src="{% static 'core/img/n.jpg' %}" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h2 class="card-title">soirée</h2>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      </div>
-    </div>
-  </div>
-</div>
+    {% endfor %}
 
 </section>
+<!-- Team Member Section End -->
 {% endblock %}
 </body>
