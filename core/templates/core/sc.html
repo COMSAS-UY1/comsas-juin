@@ -1,0 +1,320 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J.U.IN &middot; Solution Challenge</title>
+
+    <!-- CSS files -->
+    <link rel="stylesheet" href="{% static 'core/css/solution_challenge_css/bootstrap.min.css' %}" type="text/css">
+	<link rel="stylesheet" href="{% static 'core/css/solution_challenge_css/sc.css' %}" type="text/css">
+    
+</head>
+<body>
+    <section id="header">
+        <!-- ========== Start Header and Navbar Section ========== -->
+        <nav class="navbar navbar-expand-md navbar-light bg-transparent ">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'core:home' %}">
+                    <img src = "{% static 'core/img/logos/logo.png' %}" alt="comsas logo">
+                    &ThickSpace;
+                    <span>Solution Challenge</span>
+                </a>
+                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'core:home' %}">J.U.IN <span class="visually-hidden">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#timeline">Timeline</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    
+    <!-- ========== End Header and Navbar Section ========== -->
+
+    <!-- ========== Start Hero Section ========== -->
+    <div class="hero">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <h2>JUIN Solution Challenge</h2>
+                <h5>Edition 2022</h5>
+                <p>
+                    <p class="fs-5">
+                        L'objectif du <span class="fw-bold"> JUIN Solution Challenge</span> est de proposer 
+                        une solution informatique qui résoud le problème de consultation hospitalière au Cameroun.
+                   </p>
+                   <p class="fs-5">La solution challenge est ouverte à tout étudiants désirant participer.
+                </p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSe3kqWVXKZ9ZwEOeUQDxkjpA7D5gNf5OMO05wA1OPIravD3bQ/viewform" class="btn">S'inscrire Maintenant</a>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <img src="{% static 'core/img/challenge.svg' %}" class="img-fluid" alt="challenge image">
+            </div>
+        </div>
+    </div>
+    <!-- ========== End Hero Section ========== -->
+    </section>
+
+    <div class="container">
+
+      <!-- ========== Start Prizes ========== -->
+        <div class="row" id="prizes">
+            <div class="col-12">
+                <div class="section-title">
+                    <h1>Recompenses</h1>
+                    <h2>Awards</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="box-item col-md-4 col-sm-12 col-lg-4">
+                <div class="flip-box">
+                    <div class="flip-box-front">
+                    <div class="inner-fr d-flex align-items-center justify-content-between">
+                        <div class="">
+                        <h3 class="flip-box-header inner-front">1</h3>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="flip-box-back">
+                    <div class="inner-ba">
+                        <h3 class="flip-box-header inner-back"><span>05 Meilleurs</span> projets</h3>
+                        <p>
+                            Les 05 meilleurs projets auront l'opportunité de presenter leurs realisations lors des JUIN 
+                            devant les diverses entreprises tech qui seront representées.
+                            Il recevront egalement de nombreux lots venant des sponsor et un certificat de participation
+                        </p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-item col-md-4 col-sm-12 col-lg-4">
+                <div class="flip-box">
+                    <div class="flip-box-front">
+                    <div class="inner-fr d-flex align-items-center justify-content-between">
+                        <div class="">
+                        <h3 class="flip-box-header inner-front">2</h3>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="flip-box-back">
+                    <div class="inner-ba">
+                        <h3 class="flip-box-header inner-back"><span>03 Meilleurs</span> projets</h3>
+                        <p>
+                            Les 03 meilleurs projets, en plus d'avoir l'opportunité de présenter leurs réalisations lors des JUIN
+                            devant les différentes entreprises technologiques qui seront représentées, des prix de la part des sponsors et un certificat de participation;
+                            les meilleurs de l'équipe auront l'opportunité d'obtenir des stages dans les entreprises représentées.
+                        </p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-item col-md-4 col-sm-12 col-lg-4">
+                <div class="flip-box">
+                    <div class="flip-box-front">
+                    <div class="inner-fr d-flex align-items-center justify-content-between">
+                        <div class="">
+                        <h3 class="flip-box-header inner-front">3</h3>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="flip-box-back">
+                    <div class="inner-ba">
+                        <h3 class="flip-box-header inner-back"><span>Le meilleur</span> projet</h3>
+                        <p>
+                            Le meilleur projet sera récompensé par le département et les membres bénéficieront également d'offres de stage 
+                            dans les entreprises représentées
+                        </p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========== End Prizes ========== -->
+
+        <!-- ========== Start Timeline Intro ========== -->
+        <div class="row mt-3" id="timeline">
+            <div class="col-12">
+                <div class="section-title">
+                    <h1>Timeline</h1>
+                    <h2>Instructions</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="timeline-img">
+                    <img src="{% static 'core/img/ehealth.svg' %}" alt="img-fluid">
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="timeline-info mt-5 pt-5">
+                    <h2>Prêt à commencer ?</h2>
+                    <h5>Chronologie du JUIN Solution Challenge 2022</h5>
+                    <p class="fs-5">
+                      Voici un aperçu chronologique du programme et comment vous devez vous y prendre afin de parcourir votre voyage lors de
+                      la J.U.IN Solution Challenge de cette année.
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+        <section>
+            <div class="container w-100 row mx-auto d-flex steps">
+
+              <div class="col-sm-6 col-md-4 col-lg-2 mx-auto step m-1 text-center">
+                <h4 class="pb-1 text-muted">Step 1</h4>
+                <h3 class="pt-1">Team Up</h3>
+              </div>
+
+              <div class="col-sm-6 col-md-4 col-lg-2 mx-auto step m-1 text-center">
+                <h4 class="pb-1  text-muted">Step 2</h4>
+                <h3 class="pt-1">Ideate</h3>
+              </div>
+
+              <div class="col-sm-6 col-md-4 col-lg-2 mx-auto step m-1 text-center">
+                <h4 class="pb-1  text-muted">Step 3</h4>
+                <h3 class="pt-1">Design</h3>
+              </div>
+
+              <div class="col-sm-6 col-md-4 col-lg-2 mx-auto step m-1 text-center">
+                <h4 class="pb-1  text-muted">Step 4</h4>
+                <h3 class="pt-1">Code</h3>
+              </div>
+
+              <div class="col-sm-6 col-md-4 col-lg-2 mx-auto step m-1 text-center">
+                <h4 class="pb-1  text-muted">Step 5</h4>
+                <h3 class="pt-1">Present</h3>
+              </div>
+          
+            </div>
+          </section>
+          
+          <section class="mt-5 pt-5">
+            <div class="row">
+
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="card border-0">
+                  <div class="row g-0">
+                    <div class="col-2">
+                      <img src="{% static 'core/img/1.svg' %}" class="card-img-top mt-4 img-fluid" alt="..." style="margin-top: -2.5rem; width: 60px; height: 60px;">
+                    </div>
+                    <div class="col-10">
+                      <div class="card-body">
+                        <h5>Formez une équipe et enregistrez-vous.</h5>
+                        <p class="container fs-5">
+                            Formez une équipe de 03 personnes, avec au moins un étudiant de l'université de Yaoundé 1, et idéalement 
+                            avec un ensemble varié de compétences techniques et non techniques. Discutez dès le début des causes
+                            qui vous tiennent le plus à cœur. Inscrivez-vous à la Solution Challenge en soumettant ce (uniquement le chef de groupe).
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="card border-0">
+                  <div class="row g-0">
+                    <div class="col-2">
+                      <img src="{% static 'core/img/2.svg' %}" class="card-img-top mt-4 img-fluid" alt="..." style="margin-top: -2.5rem; width: 60px; height: 60px;">
+                    </div>
+                    <div class="col-10">
+                      <div class="card-body">
+                        <h5>Identifier une solution</h5>
+                        <p class="container fs-5">
+                          L'une des façons d'identifier une solution est d'utiliser un <a href="https://designsprintkit.withgoogle.com/methodology/overview"> 
+                          sprint de conception</a>, un cadre flexible pour résoudre des problèmes par la conception, le prototypage et l'essai d'idées avec 
+                          des utilisateurs au cours d'un sprint de cinq jours.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="card border-0">
+                  <div class="row g-0">
+                    <div class="col-2">
+                      <img src="{% static 'core/img/3.svg' %}" class="card-img-top mt-4 img-fluid" alt="..." style="margin-top: -2.5rem; width: 60px; height: 60px;">
+                    </div>
+                    <div class="col-10">
+                      <div class="card-body">
+                        <h5>Concevoir l'interface utilisateurs</h5>
+                        <p class="container fs-5">
+                          C'est là qu'interviennent l'interface utilisateur et l'expérience utilisateur de votre solution. Commencez à réfléchir à
+                          la manière dont un utilisateur interagira avec la solution.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="card border-0">
+                  <div class="row g-0">
+                    <div class="col-2">
+                      <img src="{% static 'core/img/4.svg' %}" class="card-img-top mt-4 img-fluid" alt="..." style="margin-top: -2.5rem; width: 60px; height: 60px;">
+                    </div>
+                    <div class="col-10">
+                      <div class="card-body">
+                        <h5>Concevoir la logique metier</h5>
+                        <p class="container fs-5">
+                          Concevez le backend de votre système, vous êtes libre d'utiliser la technologie de votre choix.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="card border-0">
+                  <div class="row g-0">
+                    <div class="col-2">
+                      <img src="{% static 'core/img/5.svg' %}" class="card-img-top mt-4 img-fluid" alt="..." style="margin-top: -2.5rem; width: 60px; height: 60px;">
+                    </div>
+                    <div class="col-10">
+                      <div class="card-body">
+                        <h5>Enregistrez une vidéo de démonstration et envoyez-la avant le 04 juin 2022.</h5>
+                        <p class="container fs-5">
+                          Mettez votre solution en action. Enregistrez une vidéo d'une démonstration réussie (d'une durée maximale de 2 minutes) et soumettez-la. Le formulaire de soumission vous sera fourni.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </section>
+        <!-- ========== End Timeline Intro ========== -->
+    </div>
+
+    <!-- ========== Start Register now ========== -->
+    <div class="row register">
+        <div class="col-12">
+            <h1>Inscrivez-vous maintenant !</h1>
+            <p>Et tentez de gagner de nombreux lots.</p>
+        </div>
+        <div class="col-12 mt-3">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe3kqWVXKZ9ZwEOeUQDxkjpA7D5gNf5OMO05wA1OPIravD3bQ/viewform" class="btn register-btn">S'inscrire</a>
+        </div>
+    </div>
+    <!-- ========== End Register now ========== -->
+</body>
+</html>
