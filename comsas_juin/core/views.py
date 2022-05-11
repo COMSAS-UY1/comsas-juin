@@ -1,6 +1,12 @@
-from django.shortcuts import get_object_or_404, render
+from email import message
+import imp
+from pyexpat.errors import messages
+from django.shortcuts import get_object_or_404, render, redirect
 from django.views.generic import TemplateView, View
+
+from core.forms import ContactRequestForm
 from .models import Edition, Event, Journey, Partner, Slider, Person
+from django.contrib import messages
 
 
 class ScheduleView(View):
@@ -73,13 +79,57 @@ class SpeakerView(View):
         )
 
 
-class ContactView(TemplateView):
-    template_name = "core/contact.html"
-
-
 class SolutionChallengeView(TemplateView):
     template_name = "core/sc.html"
 
 
 class TimeLineView(TemplateView):
     template_name = "core/time-line.html"
+
+
+class ContactView(View):
+    template_name = "core/contact.html"
+    form_class = ContactRequestForm
+
+    def get(self, request, *args, **kwargs):
+        form = self.form_class()
+        return render(request, self.template_name, {"form": form})
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        print(form)
+        if form.is_valid():
+            contact_request = form.save()
+            # mail_subject = _('Nouvel avis sur votre site')
+            # html_message = render_to_string(
+            #     'core/email_messages.html', {
+            #         'email': contact_request.email,
+            #         'name': contact_request.name,
+            #         'numero': contact_request.numero,
+            #         'message': contact_request.message,
+            #         'domain': current_site
+            #     })
+            # plain_message = strip_tags(html_message)
+
+            # try:
+            #     send_mail(mail_subject,
+            #               plain_message,
+            #               None,
+            #               fail_silently=False,
+            #               recipient_list=['yannik.kadjie@facsciences-uy1.cm'],
+            #               html_message=html_message)
+            # except BadHeaderError:
+            #     messages.error(_('Invalid header found. Please retry later'))
+            #     return render(request, self.template_name, {
+            #         'form': form,
+            #     })
+            messages.success(request, ("Your message has been successfully sent"))
+            return redirect("core:home")
+
+        return render(
+            request,
+            self.template_name,
+            {
+                "form": form,
+            },
+        )

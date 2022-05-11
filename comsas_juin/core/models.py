@@ -89,3 +89,15 @@ class Slider(models.Model):
 
     def __str__(self):
         return self.big_title
+
+
+class ContactRequest(models.Model):  # laisser un messages aux admins
+    name = models.CharField(max_length=200)
+    email = models.EmailField()
+    message = models.TextField()
+    phone = models.CharField(max_length=15)
+    date_sended = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+
+        return f"{self.name}"
