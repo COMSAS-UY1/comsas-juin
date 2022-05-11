@@ -1,0 +1,378 @@
+{% extends 'core/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block body %}
+
+<body>
+    <!-- **********************slide***************************-->
+    {% include 'core/includes/slide.html' %}
+    {% include 'core/messages.html' %}
+    <!-- Counter Section Begin -->
+    <section class="counter-section bg-gradient border">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="counter-text">
+                        <span class="mb-2">{% blocktrans %}Comptez avec nous.<br />{% endblocktrans %}</span>
+                        <h3 class="fw-bold">{% trans "Les J.U.IN débutent dans :" %}</h3>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="cd-timer" id="countdown">
+                        <div class="cd-item">
+                            <span>27</span>
+                            <p>Jours</p>
+                        </div>
+                        <div class="cd-item">
+                            <span>18</span>
+                            <p>Heures</p>
+                        </div>
+                        <div class="cd-item">
+                            <span>46</span>
+                            <p>Minutes</p>
+                        </div>
+                        <div class="cd-item">
+                            <span>32</span>
+                            <p>Secondes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Counter Section End -->
+    {% block descrip %}
+    <!-- Home About Section Begin -->
+    <section class="home-about-section">
+        <div class="container">
+
+            <div class="row">
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="ha-pic pt-0">
+                        <img src="{% static 'core/img/s2.jpg' %}" class="welcome_img">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="ha-text pt-5">
+                        <h2>Bienvenue à la 17ème édition des J.U.IN</h2>
+                        <h4>Sous le thème :</h4>
+                        <h3 class="fw-bold"><q>E-Santé : Défis et Opportunités</q></h3>
+                        <p>Les J.U.IN (<span class="initiales">J</span>ournées <span
+                                class="initiales">U</span>niversitaires de l'<span
+                                class="initiales">IN</span>formatiques) sont un ensemble d'activités organisées sur une
+                            semaine par le Computer Science Association (COMSAS) de l'Université de Yaoundé I avec pour
+                            objectif de faire valoir le potentiel des étudiants de la filière Informatique.
+                            <br>En conviant non seulement tous les etudiants de l'Université mais aussi divers
+                            entreprises et investisseurs, le but etant de faire découvrir au grand public les attouts
+                            que possèdent les étudiants de la dite filière.
+                        </p>
+                        <a href="{% url 'core:about' %}" class="primary-btn text-white top-btn solution pt-4"
+                            style="text-decoration: none;">En savoir davantage</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Home About Section End -->
+
+
+
+    <div class="col-lg-12">
+        <div class="section-title">
+            <h2>Nos Chifres cette année</h2>
+            <p>Notre description par des chifres</p>
+        </div>
+    </div>
+    </div>
+    <div id="projectFacts" class="sectionClass">
+        <div class="fullWidth eight columns">
+            <div class="projectFactsWrap ">
+                <div class="item wow fadeInUpBig animated animated" data-number="12" style="visibility: visible;">
+                    <i class="fa fa-tasks"></i>
+                    <p id="number1" class="number pt-3">20</p>
+                    <p>Projets réalisés</p>
+                </div>
+                <div class="item wow fadeInUpBig animated animated" data-number="55" style="visibility: visible;">
+                    <i class="fa fa-user"></i>
+                    <p id="number2" class="number pt-3">1500</p>
+                    <p>Etudiants attendus</p>
+                </div>
+                <div class="item wow fadeInUpBig animated animated" data-number="359" style="visibility: visible;">
+                    <i class="fa fa-building"></i>
+                    <p id="number3" class="number pt-3">50</p>
+                    <p>Entreprises invitées</p>
+                </div>
+                <div class="item wow fadeInUpBig animated animated" data-number="246" style="visibility: visible;">
+                    <i class="fa fa-calendar"></i>
+                    <p id="number4" class="number pt-3">05</p>
+                    <p>Jours</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
+    <div class="card-group container mb-5">
+        <div class="col-lg-12">
+            <div class="section-title">
+                <h2>Découvrez</h2>
+                <p>Découvrez les grands axes</p>
+            </div>
+        </div>
+        <div class="card cardOut m-1">
+            <div class="cardIn">
+                <img src="{% static 'core/img/tech_talk.png' %}" class="card-img-top" alt="..." style="height: auto;">
+                <div class="card-body">
+                    <h2 class="card-title">Tech Talk</h2>
+                    <p class="card-text">
+                        Pendant ces journées, nous aurons des assemblées de personnes discutant des sujets technologiques, axés autour du thème de cette année.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="card cardOut m-1">
+            <div class="cardIn">
+                <img src="{% static 'core/img/techs.jpg' %}" class="card-img-top" alt="..." style="height: auto;">
+                <div class="card-body">
+                    <h2 class="card-title">Tech-Challenge</h2>
+                    <p class="card-text">
+                        Le concours du meilleur projet, centré sur le thème <q><b>E-Santé</b></q> dans la problématique de la consultation hospitalière.
+                        <a href="/solution-challenge/" class="btn btn-primary">Participer au concours</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="card cardOut m-1">
+            <div class="cardIn">
+                <img src="{% static 'core/img/c.jpg' %}" class="card-img-top" alt="..." style="height: auto;">
+                <div class="card-body">
+                    <h2 class="card-title">Workshop</h2>
+                    <p class="card-text">
+                        Ici, nous aurons des ateliers pratiques, pour travailler en équipes sur des projets réels en utilisant les technologies.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="card cardOut m-1">
+            <div class="cardIn">
+                <img src="{% static 'core/img/quizz.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h2 class="card-title">Quizz</h2>
+                    <p class="card-text">
+                        Pendant la période des J.U.IN, nous prévoyons des Quizz sur la culture générale et les domaines de l'Informatique.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-group container mb-5">
+        <div class="card cardOut m-1">
+            <div class="cardIn">
+                <img src="{% static 'core/img/bootcamp.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h2 class="card-title">Bootcamp</h2>
+                    <p class="card-text">
+                        Formations en immersion au cours desquelles l'apprentissage de la programmation  sera fait. 
+                        A la fin, les participants seront capables de comprendre l'essentiel des langages de programmation et Framework.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="card cardOut m-1">
+            <div class="cardIn">
+                <img src="{% static 'core/img/tg.webp' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h2 class="card-title">Gaming</h2>
+                    <p class="card-text">
+                        Moment de détente entre nous, sur les compétitions de Jeux vidéos comme FIFA, PES, Blur et bien d'autres.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="card cardOut m-1">
+            <div class="cardIn">
+                <img src="{% static 'core/img/s.jpeg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h2 class="card-title">Projects Exhibition</h2>
+                    <p class="card-text">
+                        La grande foire de présentation de projets dans les stands. Même les autres établissements de la ville seront de la place. <b>Vive la Science</b>.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="card cardOut m-1">
+            <div class="cardIn">
+                <img src="{% static 'core/img/n.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h2 class="card-title">Soirée de Gala</h2>
+                    <p class="card-text">
+                        Soirée de Gala. Remise des prix, danse, divertissement, chant... Pour clôturer en beauté les J.U.IN 2022.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'core/includes/intervenants.html' %}
+
+    <!-- Schedule Section Begin -->
+    <section class="schedule-section spad" id='programme'>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Au programme</h2>
+                        <p>Ne manquez pas de rendez-vous, soyez avec nous tout le long.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="schedule-tab">
+                        <ul class="nav nav-tabs" role="tablist">
+                            {% for journey in journeys %}
+                            {% if journey.is_the_first_date %}
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#tabs-{{ forloop.counter}}"
+                                    role="tab">
+                                    <h5> Jour {{ forloop.counter }}</h5>
+                                    <p>{{ journey.date | date:'d-m-Y' }}</p>
+                                </a>
+                            </li>
+                            {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-{{ forloop.counter }}" role="tab">
+                                    <h5> Jour {{ forloop.counter }}</h5>
+                                    <p>{{ journey.date | date:'d-m-Y' }}</p>
+                                </a>
+                            </li>
+                            {% endif %}
+                            {% endfor %}
+
+
+                        </ul><!-- Tab panes -->
+                        <div class="tab-content">
+                            {% for journey in journeys %}
+                                {% if journey.is_the_first_date %}
+                                    <div class="tab-pane active" id="tabs-{{ forloop.counter }}" role="tabpanel">
+                                        {% for event in journey.get_event %}
+                                            <div class="st-content">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <div class="sc-pic">
+                                                                <img src="{{ event.flyers }}">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-5">
+                                                            <div class="sc-text">
+                                                                <h4>{{ event.title }}</h4>
+                                                                <ul>
+                                                                    <li><i class="fa fa-user"></i>
+                                                                        {% for elt in event.get_speaker %}{{elt.speaker.full_name}}{% endfor %}
+                                                                    </li>
+                                                                    <li><i class="fa fa-envelope"></i>
+                                                                        {% for elt in event.get_speaker %} {{ event.get_speaker.speaker.email }} {% endfor %}
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <ul class="sc-widget">
+                                                                <li><i class="fa fa-clock-o"></i> 
+                                                                    {{ event.start_time | time:'H:i' }} - {{ event.end_time | time:'H:i' }}
+                                                                </li>
+                                                                <li><i class="fa fa-map-marker"></i>
+                                                                    {{ event.location }}
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                <div class="tab-pane" id="tabs-{{ forloop.counter }}" role="tabpanel">
+                                {% for event in journey.get_event %}
+                                    <div class="st-content">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <div class="sc-pic">
+                                                        <img src="{{ event.flyers }}">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-5">
+                                                    <div class="sc-text">
+                                                        <h4>{{ event.title }}</h4>
+                                                        <ul>
+                                                            <li><i class="fa fa-user"></i>
+                                                                {% for elt in event.get_speaker %}{{elt.speaker.full_name}} - {% endfor %}
+                                                            </li>
+                                                            <li><i class="fa fa-envelope"></i>
+                                                                {% for elt in event.get_speaker %} {{ event.get_speaker.speaker.email }} {% endfor %}
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <ul class="sc-widget">
+                                                        <li><i class="fa fa-clock-o"></i> {{ event.start_time | time:'H:i' }} - {{ event.end_time | time:'H:i' }}</li>
+                                                        <li><i class="fa fa-map-marker"></i>
+                                                            {{ event.location }}
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Schedule Section End -->
+
+    <!-- Team Member Section Begin -->
+    <section class="team-member-section mb-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Comité D'organisation</h2>
+                        <p>le comité d'organisation de cette édition.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% for organizer in organizers %}
+        <div class="member-item set-bg" data-setbg="{{organizer.profile.url}}">
+            <div class="mi-social">
+                <div class="mi-social-inner bg-gradient">
+                    <a href="{{organizer.facebook}}"><i class="fa fa-facebook"></i></a>
+                    <a href="{{organizer.twitter}}"><i class="fa fa-twitter"></i></a>
+                    <a href="{{organizer.linkedin}}"><i class="fa fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="mi-text">
+                <h5>{{organizer.full_name|title}}</h5>
+                <span>{{organizer.post|title}}</span>
+            </div>
+        </div>
+        {% endfor %}
+
+    </section>
+    <!-- Team Member Section End -->
+    {% comment %} <div>{% include 'core/includes/location.html' %}</div> {% endcomment %}
+
+</body>
+{% endblock %}

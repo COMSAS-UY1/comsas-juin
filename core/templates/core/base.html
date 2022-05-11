@@ -1,0 +1,202 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<link rel="stylesheet" href="{% static 'core/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'core/css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'core/css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'core/css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'core/css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'core/css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}"  type="text/css">
+
+	<!-- slide elements-->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="all">
+
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
+
+
+        <!-- Bootstrap bootstrap-touch-slider Slider Main Style Sheet -->
+        <link rel="stylesheet" href="{% static 'core/css/bootstrap-touch-slider.css' %}" rel="stylesheet" media="all">
+     <!-- end  slide elements-->
+	<title>COMSAS | J.U.IN 2022 {% block title %}  {% endblock %} </title>
+</head>
+<body>
+
+    <style type="text/css">
+        a{
+            text-decoration: none;
+        }
+
+        @media only screen and (max-width: 480px) {
+            .logo {
+                width: 50%;
+            }
+        }
+    </style>
+    <!-- Page Preloder 
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+    -->
+{% block nav %}
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-sm-5">
+            </div>
+            <div class="col-sm-2">
+                <a href="{% url 'core:home' %}"><img src="{% static 'core/img/logos/logo.png' %}" class="logo"></a>
+            </div>
+            <div class="col-sm-5">
+            </div>
+        </div>
+    </div>
+    <header class="header-section">
+        <div class="container">
+            <div class="nav-menu">
+                <nav class="mainmenu mobile-menu">
+                    <ul>
+                        <li class="active"><a href="{% url 'core:home' %}">Accueil</a></li>
+                        <li><a href="{% url 'core:speakers' %}">Intervenants</a>
+                            <ul class="dropdown">
+                            {% for speakers in speakers %}
+                                <li><a href="{%url 'core:speakers' %}#speaker-{{speaker.full_name}}">{{speaker.full_name}} </a></li>
+                                {% endfor %}
+                                
+                                
+                            </ul>
+                        </li>
+                        <li><a href="{% url 'core:schedule' %}">Programme</a></li>
+                        <li><a href="{% url 'core:contact' %}">Contacts</a></li>
+                        <li><a href="{% url 'core:about' %}">A propos</a></li>
+                    </ul>
+                </nav>
+
+                <a href="{% url 'core:solution-challenge' %}" class="primary-btn top-btn solution pt-4" style="text-decoration: none;">Solution Challenge</a>
+
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+
+{% endblock %}
+
+
+{% block body %}
+
+
+{% endblock %}
+
+
+
+{% block footer %}
+
+    {% block localisation %}
+     <!-- Contact Section Begin -->
+    <section class="contact-section spad pt-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="section-title">
+                        <h2>Localisation</h2>
+                        <p>Où se déroule les J.U.IN?</p>
+                    </div>
+                    <div class="cs-text">
+                        <div class="ct-address">
+                            <span>Adresse:</span>
+                            <p>A l'esplanade du Département d'Informatique.<br/></p>
+                        </div>
+                        <ul>
+                            <li>
+                                <span>Téléhone:</span>
+                                (+237) 699 016 727
+                            </li>
+                            <li>
+                                <span>Email:</span>
+                                comsas@univ-yaounde1.cm
+                            </li>
+                        </ul>
+                        <div class="ct-links">
+                            <span>Website:</span>
+                            <p><a href="https://comsas.club" target="_blank">https://comsas.club</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="cs-map">
+                        <iframe
+                            src="https://maps.google.com/maps?q=VF5X+3J4,%20Yaound%C3%A9&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                            height="400" style="border:0;" allowfullscreen=""></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->
+    {% endblock %}
+    <div class="logos bg-dark pt-5">
+        <div class="partner-logo owl-carousel container">
+                {% for patner in partners %}
+
+                <a href="{{partner.web_site}}" class="pl-table">
+                    <div class="pl-tablecell">
+                        <img src = "{{partner.logo.url}}" alt="{{partner.name}}">
+                    </div>
+                </a>
+                {% endfor %}    
+                
+            </div>
+    </div>
+    <footer class="footer-section pt-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-text">
+                        <div class="ft-logo">
+                            <a href="{% url 'core:home' %}" class="footer-logo"><img src = "{% static 'core/img/logos/logo-white.png' %}" alt="" width="80px" height="85px" style="opacity: 0.8;"></a>
+                        </div>
+                        <ul>
+                            <li><a href="{% url 'core:home' %}">Home</a></li>
+                            <li><a href="{% url 'core:speakers' %}">Intervenants</a></li>
+                            <li><a href="{% url 'core:schedule' %}">Agenda</a></li>
+                            <li><a href="{% url 'core:contact' %}">Contacts</a></li>
+                            <li><a href="{% url 'core:about' %}">A propos</a></li>
+                        </ul>
+                        <div class="copyright-text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Built by <a href="https://comsas.club" target="_blank">COM.S.A.S</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
+                        <div class="ft-social">
+                            <a href="https://web.facebook.com/Computer-Science-Association-115804577784033/?_rdc=1&_rdr"><i class="fa fa-facebook"></i></a>
+                            <a href="https://twitter.com/ComsasClub"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="https://github.com/COMSAS-UY1"><i class="fa fa-github"></i></a>
+                            <a href="https://www.youtube.com/channel/UCSGj39TwmsReLy57_DWt7fw"><i class="fa fa-youtube-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}
+
+
+    <!-- Js Plugins -->
+    <script src = "{% static 'core/js/jquery-3.3.1.min.js' %}"></script>
+    <script src = "{% static 'core/js/bootstrap.min.js' %}"></script>
+    <script src = "{% static 'core/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src = "{% static 'core/js/jquery.countdown.min.js' %}"></script>
+    <script src = "{% static 'core/js/jquery.slicknav.js' %}"></script>
+    <script src = "{% static 'core/js/owl.carousel.min.js' %}"></script>
+    <script src = "{% static 'core/js/main.js' %}"></script>
+
+
+</body>
+</html>
