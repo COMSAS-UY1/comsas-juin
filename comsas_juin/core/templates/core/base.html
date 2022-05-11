@@ -34,6 +34,12 @@
         a{
             text-decoration: none;
         }
+
+        @media only screen and (max-width: 480px) {
+            .logo {
+                width: 50%;
+            }
+        }
     </style>
     <!-- Page Preloder 
     <div id="preloder">
@@ -42,19 +48,23 @@
     -->
 {% block nav %}
 
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-sm-5">
+            </div>
+            <div class="col-sm-2">
+                <a href="{% url 'core:home' %}"><img src="{% static 'core/img/logos/logo.png' %}" class="logo"></a>
+            </div>
+            <div class="col-sm-5">
+            </div>
+        </div>
+    </div>
     <header class="header-section">
         <div class="container">
-            <div class="logo">
-                <a href="{% url 'core:home' %}">
-
-                    <img src = "{% static 'core/img/logos/logo.png' %}" alt="" width="180px" height="80px" style="margin-top:12px;">
-
-                </a>
-            </div>
             <div class="nav-menu">
                 <nav class="mainmenu mobile-menu">
                     <ul>
-                        <li class="active"><a href="{% url 'core:home' %}">Acceuil</a></li>
+                        <li class="active"><a href="{% url 'core:home' %}">Accueil</a></li>
                         <li><a href="{% url 'core:speakers' %}">Intervenants</a>
                             <ul class="dropdown">
                             {% for speakers in speakers %}
@@ -102,21 +112,21 @@
                     <div class="cs-text">
                         <div class="ct-address">
                             <span>Adresse:</span>
-                            <p>A l'esplanade du departement informatique.<br /></p>
+                            <p>A l'esplanade du Département d'Informatique.<br/></p>
                         </div>
                         <ul>
                             <li>
                                 <span>Téléhone:</span>
-                                (+227) 693-184-269
+                                (+237) 699 016 727
                             </li>
                             <li>
                                 <span>Email:</span>
-                                comsas@facsciences-uy1.cm
+                                comsas@univ-yaounde1.cm
                             </li>
                         </ul>
                         <div class="ct-links">
                             <span>Website:</span>
-                            <p>https://comsas.club</p>
+                            <p><a href="https://comsas.club" target="_blank">https://comsas.club</a></p>
                         </div>
                     </div>
                 </div>
@@ -172,17 +182,17 @@
                 <div class="col-lg-12">
                     <div class="footer-text">
                         <div class="ft-logo">
-                            <a href="#" class="footer-logo"><img src = "{% static 'core/img/logos/logo-white.png' %}" alt="" width="80px" height="85px" style="opacity: 0.8;"></a>
+                            <a href="/" class="footer-logo"><img src = "{% static 'core/img/logos/logo-white.png' %}" alt="" width="80px" height="85px" style="opacity: 0.8;"></a>
                         </div>
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Speakers</a></li>
-                            <li><a href="#">Schedule</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="{% url 'core:home' %}">Home</a></li>
+                            <li><a href="{% url 'core:speakers' %}">Intervenants</a></li>
+                            <li><a href="{% url 'core:schedule' %}">Agenda</a></li>
+                            <li><a href="{% url 'core:about' %}">A propos</a></li>
+                            <li><a href="{% url 'core:contact' %}">Contacts</a></li>
                         </ul>
                         <div class="copyright-text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Built by <a href="#" target="_blank">COM.S.A.S</a>
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Built by <a href="https://comsas.club" target="_blank">COM.S.A.S</a>
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
                         <div class="ft-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
