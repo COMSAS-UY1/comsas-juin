@@ -26,6 +26,7 @@
         <!-- Bootstrap bootstrap-touch-slider Slider Main Style Sheet -->
         <link rel="stylesheet" href="{% static 'core/css/bootstrap-touch-slider.css' %}" rel="stylesheet" media="all">
      <!-- end  slide elements-->
+     <script src = "{% static 'core/js/main.js' %}"></script>
 	<title>COMSAS | J.U.IN 2022 {% block title %}  {% endblock %} </title>
 </head>
 <body>
@@ -64,8 +65,8 @@
             <div class="nav-menu">
                 <nav class="mainmenu mobile-menu">
                     <ul>
-                        <li class="active"><a href="{% url 'core:home' %}">Accueil</a></li>
-                        <li><a href="{% url 'core:speakers' %}">Intervenants</a>
+                        <li {% if request.resolver_match.url_name == 'home' %}class="active"{% endif %}><a href="{% url 'core:home' %}">Accueil</a></li>
+                        <li {% if request.resolver_match.url_name == 'speakers' %}class="active"{% endif %}><a href="{% url 'core:speakers' %}">Intervenants</a>
                             <ul class="dropdown">
                             {% for speakers in speakers %}
                                 <li><a href="{%url 'core:speakers' %}#speaker-{{speaker.full_name}}">{{speaker.full_name}} </a></li>
@@ -74,9 +75,9 @@
                                 
                             </ul>
                         </li>
-                        <li><a href="{% url 'core:schedule' %}">Programme</a></li>
-                        <li><a href="{% url 'core:contact' %}">Contacts</a></li>
-                        <li><a href="{% url 'core:about' %}">A propos</a></li>
+                        <li {% if request.resolver_match.url_name == 'schedule' %}class="active"{% endif %}><a href="{% url 'core:schedule' %}">Programme</a></li>
+                        <li {% if request.resolver_match.url_name == 'contact' %}class="active"{% endif %}><a href="{% url 'core:contact' %}">Contacts</a></li>
+                        <li {% if request.resolver_match.url_name == 'about' %}class="active"{% endif %}><a href="{% url 'core:about' %}">A propos</a></li>
                     </ul>
                 </nav>
 
@@ -107,25 +108,25 @@
                 <div class="col-lg-6">
                     <div class="section-title">
                         <h2>Localisation</h2>
-                        <p>Où se déroule les J.U.IN?</p>
+                        <p>Où se déroule les J.U.IN ?</p>
                     </div>
                     <div class="cs-text">
                         <div class="ct-address">
-                            <span>Adresse:</span>
-                            <p>A l'esplanade du Département d'Informatique.<br/></p>
+                            <span>Lieu :</span>
+                            <p>A l'esplanade du Département d'Informatique, UY1.<br/></p>
                         </div>
                         <ul>
                             <li>
-                                <span>Téléhone:</span>
+                                <span>Téléhone :</span>
                                 (+237) 699 016 727
                             </li>
                             <li>
-                                <span>Email:</span>
-                                comsas@univ-yaounde1.cm
+                                <span>E-mail :</span>
+                                <a href="mailto:comsas@univ-yaounde1.cm" target="_blank">comsas@univ-yaounde1.cm</a>
                             </li>
                         </ul>
                         <div class="ct-links">
-                            <span>Website:</span>
+                            <span>Site Web :</span>
                             <p><a href="https://comsas.club" target="_blank">https://comsas.club</a></p>
                         </div>
                     </div>
@@ -143,6 +144,10 @@
     <!-- Contact Section End -->
     {% endblock %}
     <div class="logos bg pt-5">
+        <div class="section-title">
+            <h2>Ils sont nombreux à nous soutenir</h2>
+            <p>Avec toute notre reconnaissance</p>
+        </div>
         <div class="partner-logo owl-carousel container">
                 {% for partner in partners %}
                 <a href="{{partner.web_site}}" class="pl-table">
@@ -168,6 +173,7 @@
                             <li><a href="{% url 'core:schedule' %}">Agenda</a></li>
                             <li><a href="{% url 'core:contact' %}">Contacts</a></li>
                             <li><a href="{% url 'core:about' %}">A propos</a></li>
+                            <li><a href="{% url 'core:about' %}" style="color: brown;">Juin Solution Challenge</a></li>
                         </ul>
                         <div class="copyright-text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
   Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Built by <a href="https://comsas.club" target="_blank">COM.S.A.S</a>

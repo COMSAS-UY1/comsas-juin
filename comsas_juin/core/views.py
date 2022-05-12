@@ -13,13 +13,18 @@ class ScheduleView(View):
     template_name = "core/schedule.html"
 
     def get(self, request, *args, **kwargs):
+        # get curret edition
+        current_edition = get_object_or_404(Edition, status="active")
         # Journeys context data
         journeys = Journey.objects.all().order_by("date")
+        # Partners context data
+        partners = current_edition.partners.all()
         return render(
             request,
             self.template_name,
             context={
                 "journeys": journeys,
+                "partners": partners,
             },
         )
 
@@ -63,11 +68,14 @@ class AboutView(View):
         current_edition = get_object_or_404(Edition, status="active")
         # Speakers context data
         speakers = current_edition.persons.filter(role="Organizer").order_by("full_name")
+        # Partners context data
+        partners = current_edition.partners.all()
         return render(
             request,
             self.template_name,
             context={
                 "speakers": speakers,
+                "partners": partners,
             },
         )
 
@@ -80,11 +88,14 @@ class SpeakerView(View):
         current_edition = get_object_or_404(Edition, status="active")
         # Speakers context data
         speakers = current_edition.persons.filter(role="Speaker").order_by("full_name")
+        # Partners context data
+        partners = current_edition.partners.all()
         return render(
             request,
             self.template_name,
             context={
                 "speakers": speakers,
+                "partners": partners,
             },
         )
 
@@ -103,7 +114,11 @@ class ContactView(View):
 
     def get(self, request, *args, **kwargs):
         form = self.form_class()
-        return render(request, self.template_name, {"form": form})
+        # get curret edition
+        current_edition = get_object_or_404(Edition, status="active")
+        # Partners context data
+        partners = current_edition.partners.all()
+        return render(request, self.template_name, {"form": form, "partners": partners,})
 
     def post(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
