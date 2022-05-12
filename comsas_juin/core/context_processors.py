@@ -7,5 +7,5 @@ def speakers(resquest):
     # Speakers context data
     speakers = current_edition.persons.filter(role="Speaker").order_by("full_name")
     partners = current_edition.partners.all().order_by("name")
-
+    print(partners)
     return {"speakers": speakers, "partners": partners}
