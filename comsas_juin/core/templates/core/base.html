@@ -15,7 +15,7 @@
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://juin.comsas.club/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Journée universitaire de l'informatique —  Comsas UY1 ">">
+    <meta property="og:title" content="Journée universitaire de l'informatique —  Comsas UY1 ">
     <meta property="og:description" content="Découvrez le plus grand évènement technologique de l'Université de Yaoundé I organisé par le Club Informatique de l'Université de Yaoundé I, COMSAS">
     <meta property="og:image:secure_url" itemprop="image" content="https://juin.comsas.club/static/core/img/juin.jpg">
 
@@ -171,14 +171,7 @@
             <h2>Ils sont nombreux à nous soutenir</h2>
             <p>Avec toute notre reconnaissance</p>
         </div>
-        <div class="partner-logo owl-carousel container">
-                {% for partner in partners %}
-                <a href="{{partner.web_site}}" class="pl-table">
-                    <div class="pl-tablecell">
-                        <img src = "{{partner.logo.url}}" alt="{{partner.name}}">
-                    </div>
-                </a>
-                {% endfor %}    
+        <div class="partner-logo owl-carousel container">   
                 
             </div>
     </div>
