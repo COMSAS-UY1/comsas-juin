@@ -171,7 +171,15 @@
             <h2>Ils sont nombreux à nous soutenir</h2>
             <p>Avec toute notre reconnaissance</p>
         </div>
-        <div class="partner-logo owl-carousel container">   
+        <div class="partner-logo owl-carousel container">
+                {% for partner in partners %}
+                hello
+                    <a href="{{partner.web_site}}" class="pl-table">
+                        <div class="pl-tablecell">
+                            <img src = "{{partner.logo.url}}" alt="{{partner.name}}">
+                        </div>
+                    </a>
+                {% endfor %}    
                 
             </div>
     </div>
