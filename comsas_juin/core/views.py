@@ -44,8 +44,6 @@ class IndexView(View):
         events = current_edition.events.all().order_by("start_time")
         # Sliders context data
         sliders = Slider.objects.all()
-        # Partners context data
-        partners = current_edition.partners.all()
         return render(
             request,
             self.template_name,
@@ -54,7 +52,6 @@ class IndexView(View):
                 "journeys": journeys,
                 "events": events,
                 "sliders": sliders,
-                "partners": partners,
                 "organizers": current_edition.persons.filter(role="Organizer"),
             },
         )
@@ -67,15 +64,15 @@ class AboutView(View):
         # get curret edition
         current_edition = get_object_or_404(Edition, status="active")
         # Speakers context data
-        speakers = current_edition.persons.filter(role="Organizer").order_by("full_name")
-        # Partners context data
-        partners = current_edition.partners.all()
+        organizers = current_edition.persons.filter(role="Organizer").order_by(
+            "full_name"
+        )
+
         return render(
             request,
             self.template_name,
             context={
-                "speakers": speakers,
-                "partners": partners,
+                "organizers": organizers,
             },
         )
 
@@ -88,14 +85,11 @@ class SpeakerView(View):
         current_edition = get_object_or_404(Edition, status="active")
         # Speakers context data
         speakers = current_edition.persons.filter(role="Speaker").order_by("full_name")
-        # Partners context data
-        partners = current_edition.partners.all()
         return render(
             request,
             self.template_name,
             context={
                 "speakers": speakers,
-                "partners": partners,
             },
         )
 
@@ -118,7 +112,14 @@ class ContactView(View):
         current_edition = get_object_or_404(Edition, status="active")
         # Partners context data
         partners = current_edition.partners.all()
-        return render(request, self.template_name, {"form": form, "partners": partners,})
+        return render(
+            request,
+            self.template_name,
+            {
+                "form": form,
+                "partners": partners,
+            },
+        )
 
     def post(self, request, *args, **kwargs):
         form = self.form_class(request.POST)

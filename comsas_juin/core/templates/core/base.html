@@ -3,10 +3,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+    <meta charset="utf-8">
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Découvrez le plus grand évènement technologique de l'Université de Yaoundé I organisé par le Club Informatique de l'Université de Yaoundé I, COMSAS">
+    <meta name="keywords" content=", JUIN, Journée univervsitaire de l'informatique, comsas 2022, Département, Club, Informatique, Université, Yaoundé, Deptinfo, Comsas, UY1, UYI, Accueil, home">
+    <meta name="author" content="COMSAS Team">
+    <meta name="robots" content="index, follow">
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://juin.comsas.club/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Journée universitaire de l'informatique —  Comsas UY1 ">">
+    <meta property="og:description" content="Découvrez le plus grand évènement technologique de l'Université de Yaoundé I organisé par le Club Informatique de l'Université de Yaoundé I, COMSAS">
+    <meta property="og:image:secure_url" itemprop="image" content="https://juin.comsas.club/static/core/img/juin.jpg">
 
-
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="juin.comsas.club">
+    <meta property="twitter:url" content="https://juin.comsas.club/">
+    <meta name="twitter:title" content="Journée universitaire de l'informatique —  Comsas UY1">
+    <meta name="twitter:description" content="Découvrez le plus grand évènement technologique de l'Université de Yaoundé I organisé par le Club Informatique de l'Université de Yaoundé I, COMSAS">
+    <meta name="twitter:image" itemprop="image" content="https://juin.comsas.club/static/core/img/juin.jpg">
+    
+    <link rel="shortcut icon" href="{% static 'core/img/favicon.ico' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'core/img/favicon.ico' %}" type="image/x-icon">
+    <link rel="canonical" href="{{ request.build_absolute_uri }}">
 	<link rel="stylesheet" href="{% static 'core/css/bootstrap.min.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'core/css/font-awesome.min.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'core/css/elegant-icons.css' %}" type="text/css">
@@ -27,7 +50,7 @@
         <link rel="stylesheet" href="{% static 'core/css/bootstrap-touch-slider.css' %}" rel="stylesheet" media="all">
      <!-- end  slide elements-->
      <script src = "{% static 'core/js/main.js' %}"></script>
-	<title>COMSAS | J.U.IN 2022 {% block title %}  {% endblock %} </title>
+	<title>{% block title %}  {% endblock %} &middot; Journée Universitaire de l'informatique &middot; Comsas UY1 </title>
 </head>
 <body>
 
@@ -68,7 +91,7 @@
                         <li {% if request.resolver_match.url_name == 'home' %}class="active"{% endif %}><a href="{% url 'core:home' %}">Accueil</a></li>
                         <li {% if request.resolver_match.url_name == 'speakers' %}class="active"{% endif %}><a href="{% url 'core:speakers' %}">Intervenants</a>
                             <ul class="dropdown">
-                            {% for speakers in speakers %}
+                            {% for speaker in speakers %}
                                 <li><a href="{%url 'core:speakers' %}#speaker-{{speaker.full_name}}">{{speaker.full_name}} </a></li>
                                 {% endfor %}
                                 
