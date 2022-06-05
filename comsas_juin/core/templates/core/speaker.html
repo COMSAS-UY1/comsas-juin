@@ -44,9 +44,11 @@
                                             <span>Speaker</span>
                                         </div>
                                         <div class="si-social">
-                                            <a href="{{speaker.facebook}}"><i class="fa fa-facebook"></i></a>
-                                            <a href="{{speaker.twitter}}"><i class="fa fa-twitter"></i></a>
-                                            <a href="{{speaker.linkdin}}"><i class="fa fa-linkdin"></i></a>
+                                            {% if speaker.facebook %}<a rel="noopener noreferrer" href="{{speaker.facebook}}"><i class="fa fa-facebook"></i></a>{% endif %}
+                                            {% if speaker.twitter %}<a rel="noopener noreferrer" href="{{speaker.twitter}}"><i class="fa fa-twitter"></i></a>{% endif %}
+                                            {% if speaker.linkdin %}<a rel="noopener noreferrer" href="{{speaker.linkdin}}"><i class="fa fa-linkedin"></i></a>{% endif %}
+                                            {% if speaker.website %}<a rel="noopener noreferrer" href="{{speaker.website}}"><i class="fa fa-globe"></i></a>{% endif %}
+                                            
                                         </div>
                                         <p>{{speaker.about|safe}}</p>
                                     </div>
